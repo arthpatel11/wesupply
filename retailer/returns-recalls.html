@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Recall order Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="false" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-place.html">place place</a></li>
+                            <li><a href="order-my.html">my orders</a></li>
+                            <li><a href="order-generic-rx.html">Generic Rx</a></li>
+                            <li><a href="order-pad.html">order pad</a></li>
+                            <li><a href="order-previous-cart.html">previous cart</a></li>
+                            <li><a href="order-review-reminder.html">review reminder</a></li>
+                            <li><a href="order-customer.html">Customer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="recall.html"><i class="wesupply-order"></i>recall</a></li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#returns-menu" role="button" aria-expanded="true" aria-controls="returns-menu"><i class="wesupply-order"></i>returns</a>
+                        <ul class="list-unstyled submenu collapse show" id="returns-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="returns.html">Returns</a></li>
+                            <li><a href="returns-policies.html">Policies</a></li>
+                            <li><a href="returns-start-a-return.html">Start a Return</a></li>
+                            <li><a href="returns-all.html">All Returns</a></li>
+                            <li class="active"><a href="returns-recalls.html">Recalls</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#rebates-menu" role="button" aria-expanded="false" aria-controls="rebates-menu"><i class="wesupply-discount"></i>rebates</a>
+                        <ul class="list-unstyled submenu collapse" id="rebates-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="product-rebate-list.html">Product rebate list</a></li>
+                            <li><a href="rebates-group-manager-rebate.html">Group Manager rebate</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="false" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-invoice.html">Invoice report</a></li>
+                            <li><a href="report-account-statement.html">Account Statement</a></li>
+                            <li><a href="report-sales.html">Sales Report</a></li>
+                            <li><a href="report-purchase-history.html">Purchase History Report</a></li>
+                            <li><a href="report-naf-outstanding.html">NAF Outstanding</a></li>
+                            <li><a href="report-naf.html">NAF Report</a></li>
+                            <li><a href="report-tax.html">Tax Report</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="account-setting.html"><i class="wesupply-account"></i>Account Setting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="table-main">
+                <h4 class="box-title">Recall order</h4>
+                <div class="comn-table-header comn-table-header-2">
+                    <div class="comn-table-header-leftside">
+                        <div class="comn-table-length">
+                            <span>Showing</span>
+                            <select id="return-recalls-datatable-length" class="comn-form-select">
+                              <option value="10">10</option>
+                              <optison value="25">25</optison>
+                              <optison value="50">50</optison>
+                              <optison value="100">100</optison>
+                           </select>
+                            <span>entries From <strong id="return-recalls-datatable-entries"></strong> Entries</span>
+                        </div>
+                    </div>
+                    <div class="comn-table-header-rightside">
+                        <div class="comn-table-header-btn-row">
+                            <div class="comn-form-switch-row me-3">
+                                <div class="form-check comn-form-check">
+                                    <input class="form-check-input" type="radio" name="recallRadio" id="NotAcknowledged">
+                                    <label class="form-check-label" for="NotAcknowledged">Not Acknowledged</label>
+                                </div>
+                                <div class="form-check comn-form-check">
+                                    <input class="form-check-input" type="radio" name="recallRadio" id="Acknowledge">
+                                    <label class="form-check-label" for="Acknowledge">Acknowledge</label>
+                                </div>
+                                <div class="form-check comn-form-check">
+                                    <input class="form-check-input" type="radio" name="recallRadio" id="All">
+                                    <label class="form-check-label" for="All">All</label>
+                                </div>
+                            </div>
+                            <button class="comn-btn">Recall</button>
+                        </div>
+                        <input type="text" id="return-recalls-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                    </div>
+                </div>
+                <table class="table" id="return-recalls">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" class="comn-form-checkbox"></th>
+                            <th>Recall#</th>
+                            <th>Type</th>
+                            <th>item no.</th>
+                            <th>Product Description</th>
+                            <th>stock no.</th>
+                            <th>Qty</th>
+                            <th>Acknowledge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>$13.65</td>
+                            <td>1</td>
+                            <td>063691007918</td>
+                            <td>CLOTRIMADERM VAG CREAM 1% 50G</td>
+                            <td>07918</td>
+                            <td><input type="text" class="comn-form-control" placeholder="21"></td>
+                            <td>27 Mar 2024</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>$13.65</td>
+                            <td>1</td>
+                            <td>063691007918</td>
+                            <td>CLOTRIMADERM VAG CREAM 1% 50G</td>
+                            <td>07918</td>
+                            <td><input type="text" class="comn-form-control" placeholder="21"></td>
+                            <td>27 Mar 2024</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>$13.65</td>
+                            <td>1</td>
+                            <td>063691007918</td>
+                            <td>CLOTRIMADERM VAG CREAM 1% 50G</td>
+                            <td>07918</td>
+                            <td><input type="text" class="comn-form-control" placeholder="21"></td>
+                            <td>27 Mar 2024</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>$13.65</td>
+                            <td>1</td>
+                            <td>063691007918</td>
+                            <td>CLOTRIMADERM VAG CREAM 1% 50G</td>
+                            <td>07918</td>
+                            <td><input type="text" class="comn-form-control" placeholder="21"></td>
+                            <td>27 Mar 2024</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>$13.65</td>
+                            <td>1</td>
+                            <td>063691007918</td>
+                            <td>CLOTRIMADERM VAG CREAM 1% 50G</td>
+                            <td>07918</td>
+                            <td><input type="text" class="comn-form-control" placeholder="21"></td>
+                            <td>27 Mar 2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+            var returnRecallsDatatable = $('#return-recalls').DataTable({
+                sDom: '<"comn-table"rt><"comn-table-footer"p>',
+                language: {
+                    paginate: datatablePagination,
+                    zeroRecords: datatableNoRecord,
+                },
+                order: [],
+                columnDefs: [{
+                    targets: [0],
+                    orderable: false
+                }],
+            });
+
+            function updateTotalEntriesCount() {
+                var pageInfo = returnRecallsDatatable.page.info();
+                $('#return-recalls-datatable-entries').text(pageInfo.recordsDisplay);
+            }
+            updateTotalEntriesCount();
+
+            $('#return-recalls-datatable-length').change(function() {
+                returnRecallsDatatable.page.len($(this).val()).draw();
+                updateTotalEntriesCount();
+            });
+
+            $('#return-recalls-datatable-search').on('keyup', function() {
+                var value = $(this).val();
+                returnRecallsDatatable.search(value).draw();
+            });
+        });
+    </script>
+</body>
+
+</html>

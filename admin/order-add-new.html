@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Order Add New Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li><a href="settings.html"><i class="wesupply-setting"></i>Settings</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#products-menu" role="button" aria-expanded="false" aria-controls="products-menu"><i class="wesupply-product"></i>Products</a>
+                        <ul class="list-unstyled submenu collapse" id="products-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="product-list.html">Product List</a></li>
+                            <li><a href="product-add.html">Add Product</a></li>
+                            <li><a href="product-types.html">product types</a></li>
+                            <li><a href="product-category.html">Category</a></li>
+                            <li><a href="product-tags.html">Tags</a></li>
+                            <li><a href="product-attributes.html">Attributes</a></li>
+                            <li><a href="product-return-criteria.html">Return Criteria</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#inventory-mng-menu" role="button" aria-expanded="false" aria-controls="inventory-mng-menu"><i class="wesupply-product"></i>inventory mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="inventory-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="inventory-stock-adjustment-list.html">stock adjustment list</a></li>
+                            <li><a href="inventory-add-stock-adjustment.html">Add stock adjustment</a></li>
+                            <li><a href="inventory.html">inventory</a></li>
+                            <li><a href="inventory-stock-mng-reasons.html">Stock Mng. Reasons</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#users-menu" role="button" aria-expanded="false" aria-controls="users-menu"><i class="wesupply-account"></i>Users</a>
+                        <ul class="list-unstyled submenu collapse" id="users-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="user-list.html">User List</a></li>
+                            <li><a href="user-roles-permission.html">Roles &amp; permissions</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="true" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse show" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-list.html">order list</a></li>
+                            <li class="active"><a href="order-add-new.html">add new order</a></li>
+                            <li><a href="order-retailers.html">retailer orders</a></li>
+                            <li><a href="order-consumer.html">consumer orders</a></li>
+                            <li><a href="order-recall.html">recall Item</a></li>
+                            <li><a href="order-accept-recalls.html">Accept Recalls</a></li>
+                            <li><a href="order-returns.html">returns</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#credits-menu" role="button" aria-expanded="false" aria-controls="credits-menu"><i class="wesupply-discount"></i>Credits</a>
+                        <ul class="list-unstyled submenu collapse" id="credits-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="credit-notes.html">Credit Notes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#suppliers-menu" role="button" aria-expanded="false" aria-controls="suppliers-menu"><i class="wesupply-suppliers"></i>Suppliers</a>
+                        <ul class="list-unstyled submenu collapse" id="suppliers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="suppliers-list.html">Suppliers list</a></li>
+                            <li><a href="suppliers-add-new.html">Add new supplier</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#customers-menu" role="button" aria-expanded="false" aria-controls="customers-menu"><i class="wesupply-customers"></i>Customers</a>
+                        <ul class="list-unstyled submenu collapse" id="customers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="customer-retailer-list.html">retailer list</a></li>
+                            <li><a href="customer-add-retailer.html">add retailer</a></li>
+                            <li><a href="customer-consumer-list.html">consumer list</a></li>
+                            <li><a href="customer-add-consumer.html">add consumer</a></li>
+                            <li><a href="customer-groups.html">Groups</a></li>
+                            <li><a href="customer-group-manager.html">Group manager</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#Payments-rebates-menu" role="button" aria-expanded="false" aria-controls="Payments-rebates-menu"><i class="wesupply-discount"></i>Payments &#38; rebates</a>
+                        <ul class="list-unstyled submenu collapse" id="Payments-rebates-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="payments-rebates-product-rebate-list.html">Product rebate list</a></li>
+                            <li><a href="Payments-rebates-group-manager-rebate.html">Group Manager rebate</a></li>
+                            <li><a href="Payments-rebates-supplier-payment.html">Supplier payment</a></li>
+                            <li><a href="Payments-rebates-supplier-stock-refund.html">Supplier stock refund</a></li>
+                            <li><a href="Payments-rebates-mgr-commission.html">Mgr. commission</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="email-templates.html"><i class="wesupply-email-templates"></i>Email Templates</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#account-menu" role="button" aria-expanded="false" aria-controls="account-menu"><i class="wesupply-account-manager"></i>Account Manager</a>
+                        <ul class="list-unstyled submenu collapse" id="account-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="account-manager-all.html">all acc. managers</a></li>
+                            <li><a href="account-manager-add-new.html">add new</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="taxes.html"><i class="wesupply-discount"></i>taxes</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#shipping-mng-menu" role="button" aria-expanded="false" aria-controls="shipping-mng-menu"><i class="wesupply-order"></i>shipping Mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="shipping-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="shipping-mng-shipment-rate.html">Shipment rate</a></li>
+                            <li><a href="shipping-mng-manage-city.html">Manage city</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="false" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-supplier-stock.html">Supplier stock</a></li>
+                            <li><a href="report-supplier-return-stock.html">Supplier return stock</a></li>
+                            <li><a href="report-group-retailer-rebate.html">group retailer rebate</a></li>
+                            <li><a href="report-retailer-rebate.html">retailer rebate</a></li>
+                            <li><a href="report-product-rebate.html">product rebate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="discount.html"><i class="wesupply-discount"></i>Discount</a></li>
+                    <li><a href="cms-pages.html"><i class="wesupply-pages"></i>cms pages</a></li>
+                    <li><a href="blog-pages.html"><i class="wesupply-pages"></i>Blog page</a></li>
+                    <li><a href="testimonial.html"><i class="wesupply-pages"></i>Testimonial</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="content-row order-content-row">
+                <div class="table-main">
+                    <div class="white-comn-box mb-0">
+                        <h4 class="box-title"><a onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a> Add new order</h4>
+                        <div class="white-comn-box-body">
+                            <div class="responsive-customer-manager-row">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="comn-form-group">
+                                            <label class="comn-form-label">Customer</label>
+                                            <select class="comn-form-select">
+                                              <option value="">Customer</option>
+                                              <option>Option 1</option>
+                                              <option>Option 2</option>
+                                              <option>Option 3</option>
+                                           </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="comn-form-group">
+                                            <label class="comn-form-label">account manager</label>
+                                            <select class="comn-form-select">
+                                                  <option value="">account manager</option>
+                                                  <option>Option 1</option>
+                                                  <option>Option 2</option>
+                                                  <option>Option 3</option>
+                                               </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comn-form-group">
+                                <div class="comn-form-switch-row">
+                                    <div class="form-check comn-form-check">
+                                        <input class="form-check-input" type="radio" name="addNewOrder" id="regularOrder">
+                                        <label class="form-check-label" for="regularOrder">new regular order</label>
+                                    </div>
+                                    <div class="form-check comn-form-check">
+                                        <input class="form-check-input" type="radio" name="addNewOrder" id="otcOrder">
+                                        <label class="form-check-label" for="otcOrder">New OTC Order </label>
+                                    </div>
+                                    <div class="form-check comn-form-check">
+                                        <input class="form-check-input" type="radio" name="addNewOrder" id="rxOrder">
+                                        <label class="form-check-label" for="rxOrder">New RX Order</label>
+                                    </div>
+                                    <div class="form-check comn-form-check">
+                                        <input class="form-check-input" type="radio" name="addNewOrder" id="narcoticOrder">
+                                        <label class="form-check-label" for="narcoticOrder">New Narcotic Order</label>
+                                    </div>
+                                    <div class="form-check comn-form-check">
+                                        <input class="form-check-input" type="radio" name="addNewOrder" id="fridgeOrder">
+                                        <label class="form-check-label" for="fridgeOrder">New Fridge Items Order</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comn-form-group">
+                                <div class="comn-country-input comn-barcode-input order-search-input">
+                                    <p class="country-code-text" data-bs-toggle="modal" data-bs-target="#barcodeModal"><i class="wesupply-barcode"></i></p>
+                                    <input type="text" class="comn-form-control" placeholder="Search product...">
+                                </div>
+                            </div>
+                            <div class="comn-small-title"><span>product (4)</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <div class="order-list-row">
+                                        <div class="order-list-card">
+                                            <div class="order-list-card-leftside">
+                                                <div class="order-list-image"><img src="../assets/images/table-thumbs.jpg" alt=""></div>
+                                                <div class="order-list-data">
+                                                    <aside>Tylenol Extra Strength Rapid Release Gelcaps 500mg 100</aside>
+                                                    <ul>
+                                                        <li>$20.00</li>
+                                                        <li>Available : 314 Pcs </li>
+                                                        <li>Blue</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="order-list-card-rightside">
+                                                <div class="order-list-card-rightside-top">
+                                                    <div class="order-count-box">
+                                                        <p class="order-minus"><i class="fa-solid fa-minus"></i></p>
+                                                        <input type="text" class="order-count-input" value="1">
+                                                        <p class="order-plus"><i class="fa-solid fa-plus"></i></p>
+                                                    </div>
+                                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                                </div>
+                                                <div class="order-list-card-rightside-bottom">
+                                                    <aside class="order-total-text">Total : <span>$20.00</span></aside>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-list-card">
+                                            <div class="order-list-card-leftside">
+                                                <div class="order-list-image"><img src="../assets/images/table-thumbs.jpg" alt=""></div>
+                                                <div class="order-list-data">
+                                                    <aside>Tylenol Extra Strength Rapid Release Gelcaps 500mg 100</aside>
+                                                    <ul>
+                                                        <li>$20.00</li>
+                                                        <li>Available : 314 Pcs </li>
+                                                        <li>Blue</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="order-list-card-rightside">
+                                                <div class="order-list-card-rightside-top">
+                                                    <div class="order-count-box">
+                                                        <p class="order-minus"><i class="fa-solid fa-minus"></i></p>
+                                                        <input type="text" class="order-count-input" value="1">
+                                                        <p class="order-plus"><i class="fa-solid fa-plus"></i></p>
+                                                    </div>
+                                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                                </div>
+                                                <div class="order-list-card-rightside-bottom">
+                                                    <aside class="order-total-text">Total : <span>$20.00</span></aside>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-list-card">
+                                            <div class="order-list-card-leftside">
+                                                <div class="order-list-image"><img src="../assets/images/table-thumbs.jpg" alt=""></div>
+                                                <div class="order-list-data">
+                                                    <aside>Tylenol Extra Strength Rapid Release Gelcaps 500mg 100</aside>
+                                                    <ul>
+                                                        <li>$20.00</li>
+                                                        <li>Available : 314 Pcs </li>
+                                                        <li>Blue</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="order-list-card-rightside">
+                                                <div class="order-list-card-rightside-top">
+                                                    <div class="order-count-box">
+                                                        <p class="order-minus"><i class="fa-solid fa-minus"></i></p>
+                                                        <input type="text" class="order-count-input" value="1">
+                                                        <p class="order-plus"><i class="fa-solid fa-plus"></i></p>
+                                                    </div>
+                                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                                </div>
+                                                <div class="order-list-card-rightside-bottom">
+                                                    <aside class="order-total-text">Total : <span>$20.00</span></aside>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-list-card">
+                                            <div class="order-list-card-leftside">
+                                                <div class="order-list-image"><img src="../assets/images/table-thumbs.jpg" alt=""></div>
+                                                <div class="order-list-data">
+                                                    <aside>Tylenol Extra Strength Rapid Release Gelcaps 500mg 100</aside>
+                                                    <ul>
+                                                        <li>$20.00</li>
+                                                        <li>Available : 314 Pcs </li>
+                                                        <li>Blue</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="order-list-card-rightside">
+                                                <div class="order-list-card-rightside-top">
+                                                    <div class="order-count-box">
+                                                        <p class="order-minus"><i class="fa-solid fa-minus"></i></p>
+                                                        <input type="text" class="order-count-input" value="1">
+                                                        <p class="order-plus"><i class="fa-solid fa-plus"></i></p>
+                                                    </div>
+                                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                                </div>
+                                                <div class="order-list-card-rightside-bottom">
+                                                    <aside class="order-total-text">Total : <span>$20.00</span></aside>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comn-small-title"><span>Payment</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <ul class="order-payment-list">
+                                        <li>
+                                            Sub Total
+                                            <p>$80.00<span></span></p>
+                                        </li>
+                                        <li>
+                                            Product Discount
+                                            <p>-5%<span></span></p>
+                                        </li>
+                                        <li>
+                                            <div class="form-check comn-form-check">
+                                                <label class="form-check-label" for="apply-discount">Apply discount</label>
+                                                <input type="checkbox" class="comn-form-checkbox" id="apply-discount">
+                                            </div>
+                                            <p>-<span><a id="applyDiscountText" style="display: none;" data-bs-toggle="modal" data-bs-target="#applyDiscountModal"><i class="wesupply-edit"></i></a></span></p>
+                                        </li>
+                                        <li>
+                                            tax
+                                            <p>$4.00<span><a data-bs-toggle="modal" data-bs-target="#taxModal"><i class="wesupply-edit"></i></a></span></p>
+                                        </li>
+                                        <li class="grand-total-text">
+                                            Grand total
+                                            <p>$84.00</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="comn-small-title"><span>select Payment type</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <div class="payment-type-checkrow">
+                                        <div class="form-check comn-form-check">
+                                            <input type="checkbox" class="comn-form-checkbox" id="useCredit">
+                                            <label class="form-check-label" for="useCredit">use credit</label>
+                                        </div>
+                                        <div class="form-check comn-form-check default-group" style="display: none;">
+                                            <input type="checkbox" class="comn-form-checkbox" id="setAsDefault">
+                                            <label class="form-check-label" for="setAsDefault">set as default</label>
+                                        </div>
+                                        <p class="available-credit-text" style="display: none;">Available credit : <span>$34.12</span></p>
+                                    </div>
+                                    <div class="comn-form-switch-row order-switch-row">
+                                        <div class="form-check comn-form-check">
+                                            <input class="form-check-input" type="radio" name="paymentType" id="cheque">
+                                            <label class="form-check-label" for="cheque">Cheque</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="form-check-input" type="radio" name="paymentType" id="eTransfer">
+                                            <label class="form-check-label" for="eTransfer">eTransfer</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="form-check-input" type="radio" name="paymentType" id="debitCreditCard">
+                                            <label class="form-check-label" for="debitCreditCard">Debit/Credit Card </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comn-btn-row">
+                                <button class="comn-btn comn-btn-secondary">cancel</button>
+                                <button class="comn-btn">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-sidebar">
+                    <div class="white-comn-box">
+                        <div class="white-comn-box-body">
+                            <div class="comn-small-title"><span>Select Customer</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <div class="comn-form-group mb-0">
+                                        <label class="comn-form-label">Customer</label>
+                                        <select class="comn-form-select">
+                                          <option value="">Customer</option>
+                                          <option>Option 1</option>
+                                          <option>Option 2</option>
+                                          <option>Option 3</option>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-comn-box mb-0">
+                        <div class="white-comn-box-body">
+                            <div class="comn-small-title"><span>Select account manager</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <div class="comn-form-group mb-0">
+                                        <label class="comn-form-label">account manager</label>
+                                        <select class="comn-form-select">
+                                          <option value="">account manager</option>
+                                          <option>Option 1</option>
+                                          <option>Option 2</option>
+                                          <option>Option 3</option>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Barcode/SKU Modal -->
+    <div class="modal fade comn-modal barcode-modal" id="barcodeModal" tabindex="-1" aria-labelledby="barcodeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="barcodeModalLabel">Add Barcode</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="comn-form-switch-row comn-border-form-switch-row">
+                        <div class="form-check comn-form-check">
+                            <input class="form-check-input" type="radio" name="addbarcodesku" id="applyGenerate" checked>
+                            <label class="form-check-label" for="applyGenerate">Auto Generate barcode</label>
+                        </div>
+                        <div class="form-check comn-form-check">
+                            <input class="form-check-input" type="radio" name="addbarcodesku" id="addManually">
+                            <label class="form-check-label" for="addManually">Add manually</label>
+                        </div>
+                    </div>
+                    <div class="auto-generate-row">
+                        <div class="auto-generate-box">
+                            <div class="auto-generate-box-data">
+                                <aside>
+                                    Product category
+                                    <span>Product name</span>
+                                    <span>Price : $40</span>
+                                </aside>
+                            </div>
+                            <div class="auto-generate-border"></div>
+                            <div class="auto-generate-qr-box">
+                                <img src="../assets/images/auto-generate-barcode.svg" alt="">
+                                <p>KJHSO30HORI</p>
+                            </div>
+                        </div>
+                        <span class="comn-form-small-text text-center">*Note : This is auto generated barcode</span>
+                    </div>
+                    <div class="add-manually-row" style="display: none;">
+                        <div class="comn-form-group">
+                            <label class="comn-form-label">enter Barcode Number</label>
+                            <input type="text" class="comn-form-control" placeholder="enter Barcode Number">
+                        </div>
+                        <div class="comn-form-group">
+                            <label class="comn-form-label text-center p-0 m-0 w-100"><b>or</b></label>
+                        </div>
+                        <div class="add-manually-imagedrop">
+                            <label class="comn-form-label">Upload image to scan barcode</label>
+                            <div class="dropzone image-drop-card barcode-modal-dropzone"></div>
+                        </div>
+                        <span class="comn-form-small-text">*Note : just upload image and it will instantly display information about the barcode.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="comn-btn comn-btn-secondary" data-bs-dismiss="modal">cancel</button>
+                    <button type="button" class="comn-btn">add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Apply Discount Modal -->
+    <div class="modal fade comn-modal" id="applyDiscountModal" tabindex="-1" aria-labelledby="applyDiscountModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="applyDiscountModalLabel">Apply discount</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="comn-form-group">
+                        <label class="comn-form-label">Discount type</label>
+                        <select class="comn-form-select">
+                           <option value="">select Discount type</option>
+                           <option>Option 1</option>
+                           <option>Option 2</option>
+                           <option>Option 3</option>
+                        </select>
+                    </div>
+                    <div class="comn-form-group mb-0">
+                        <label class="comn-form-label">reson for discount</label>
+                        <input type="text" class="comn-form-control" placeholder="reson for discount">
+                        <span class="comn-form-small-text">Your customer can see the reason of discount</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="comn-btn comn-btn-secondary" data-bs-dismiss="modal">cancel</button>
+                    <button type="button" class="comn-btn">add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tax Modal -->
+    <div class="modal fade comn-modal" id="taxModal" tabindex="-1" aria-labelledby="taxModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="taxModalLabel">tax</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="comn-form-group mb-0">
+                        <label class="comn-form-label">edit tax</label>
+                        <input type="text" class="comn-form-control" placeholder="edit tax">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="comn-btn comn-btn-secondary" data-bs-dismiss="modal">cancel</button>
+                    <button type="button" class="comn-btn">add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#apply-discount').on('change', function() {
+                $('#applyDiscountText').toggle($(this).is(':checked'));
+            });
+        });
+        $(document).ready(function() {
+            $('#useCredit').on('change', function() {
+                $('.default-group, .available-credit-text').toggle($(this).is(':checked'));
+            });
+        });
+    </script>
+</body>
+
+</html>

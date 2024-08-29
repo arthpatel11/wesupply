@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Low Stock Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="false" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-list.html">order list</a></li>
+                            <li><a href="order-add-new.html">add new order</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="commission.html"><i class="wesupply-discount"></i>commission</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#customers-menu" role="button" aria-expanded="false" aria-controls="customers-menu"><i class="wesupply-customers"></i>Customers</a>
+                        <ul class="list-unstyled submenu collapse" id="customers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="customer-list.html">custom list</a></li>
+                            <li><a href="customer-add.html">add custom</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="true" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse show" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-stock-by-category.html">stock by category</a></li>
+                            <li class="active"><a href="report-low-stock.html">low stock</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="table-main">
+                <h4 class="box-title">Low Stocks</h4>
+                <div class="comn-table-header comn-table-header-2">
+                    <div class="comn-table-header-leftside">
+                        <div class="comn-table-length">
+                            <span>Showing</span>
+                            <select id="low-stock-datatable-length" class="comn-form-select">
+                               <option value="10">10</option>
+                               <option value="25">25</option>
+                               <option value="50">50</option>
+                               <option value="100">100</option>
+                           </select>
+                            <span>entries From <strong id="low-stock-datatable-entries"></strong> Entries</span>
+                        </div>
+                    </div>
+                    <div class="comn-table-header-rightside align-items-end">
+                        <div class="comn-table-header-btn-row">
+                            <div class="comn-form-group mb-0">
+                                <label class="comn-form-label">Categories</label>
+                                <select class="comn-form-select">
+                                 <option value="">All</option>
+                                 <option>Option 1</option>
+                                 <option>Option 2</option>
+                                 <option>Option 3</option>
+                                </select>
+                            </div>
+                            <button class="comn-btn comn-btn-border" id="low-stock-export-btn"><i class="wesupply-export"></i>export</button>
+                        </div>
+                        <input type="text" id="low-stock-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                    </div>
+                </div>
+                <table class="table" id="low-stock">
+                    <thead>
+                        <tr>
+                            <th>image</th>
+                            <th>item#</th>
+                            <th>stock#</th>
+                            <th>vendor company name</th>
+                            <th>product</th>
+                            <th>purchase date</th>
+                            <th>expiry date</th>
+                            <th>quantity</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>trading ltd</td>
+                            <td>sanitizer 60ml</td>
+                            <td>13 Mar 2024 02:14</td>
+                            <td>13 Mar 2024 02:14</td>
+                            <td>3</td>
+                            <td>$4.52</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>trading ltd</td>
+                            <td>sanitizer 60ml</td>
+                            <td>13 Mar 2024 02:14</td>
+                            <td>13 Mar 2024 02:14</td>
+                            <td>3</td>
+                            <td>$4.52</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>trading ltd</td>
+                            <td>sanitizer 60ml</td>
+                            <td>13 Mar 2024 02:14</td>
+                            <td>13 Mar 2024 02:14</td>
+                            <td>3</td>
+                            <td>$4.52</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>trading ltd</td>
+                            <td>sanitizer 60ml</td>
+                            <td>13 Mar 2024 02:14</td>
+                            <td>13 Mar 2024 02:14</td>
+                            <td>3</td>
+                            <td>$4.52</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var lowStockDatatable = $('#low-stock').DataTable({
+                sDom: '<"comn-table"rt><"comn-table-footer"p>',
+                language: {
+                    paginate: datatablePagination,
+                    zeroRecords: datatableNoRecord,
+                },
+                order: [],
+                columnDefs: [{
+                    targets: [0],
+                    orderable: false
+                }],
+                buttons: [{
+                    extend: 'excelHtml5',
+                    title: 'Wesupply Report Low Stocks',
+                    exportOptions: {
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8]
+                    }
+                }]
+            });
+
+            function updateTotalEntriesCount() {
+                var pageInfo = lowStockDatatable.page.info();
+                $('#low-stock-datatable-entries').text(pageInfo.recordsDisplay);
+            }
+            updateTotalEntriesCount();
+
+            $('#low-stock-datatable-length').change(function() {
+                lowStockDatatable.page.len($(this).val()).draw();
+                updateTotalEntriesCount();
+            });
+
+            $('#low-stock-datatable-search').on('keyup', function() {
+                var value = $(this).val();
+                lowStockDatatable.search(value).draw();
+            });
+
+            $('#low-stock-export-btn').on('click', function() {
+                lowStockDatatable.button('.buttons-excel').trigger();
+            });
+        });
+    </script>
+</body>
+
+</html>

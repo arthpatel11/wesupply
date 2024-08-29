@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Inventory Edit Stock Adjustment Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li><a href="settings.html"><i class="wesupply-setting"></i>Settings</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#products-menu" role="button" aria-expanded="false" aria-controls="products-menu"><i class="wesupply-product"></i>Products</a>
+                        <ul class="list-unstyled submenu collapse" id="products-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="product-list.html">Product List</a></li>
+                            <li><a href="product-add.html">Add Product</a></li>
+                            <li><a href="product-types.html">product types</a></li>
+                            <li><a href="product-category.html">Category</a></li>
+                            <li><a href="product-tags.html">Tags</a></li>
+                            <li><a href="product-attributes.html">Attributes</a></li>
+                            <li><a href="product-return-criteria.html">Return Criteria</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#inventory-mng-menu" role="button" aria-expanded="true" aria-controls="inventory-mng-menu"><i class="wesupply-product"></i>inventory mng.</a>
+                        <ul class="list-unstyled submenu collapse show" id="inventory-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li class="active"><a href="inventory-stock-adjustment-list.html">stock adjustment list</a></li>
+                            <li><a href="inventory-add-stock-adjustment.html">Add stock adjustment</a></li>
+                            <li><a href="inventory.html">inventory</a></li>
+                            <li><a href="inventory-stock-mng-reasons.html">Stock Mng. Reasons</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#users-menu" role="button" aria-expanded="false" aria-controls="users-menu"><i class="wesupply-account"></i>Users</a>
+                        <ul class="list-unstyled submenu collapse" id="users-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="user-list.html">User List</a></li>
+                            <li><a href="user-roles-permission.html">Roles &amp; permissions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="false" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-list.html">order list</a></li>
+                            <li><a href="order-add-new.html">add new order</a></li>
+                            <li><a href="order-retailers.html">retailer orders</a></li>
+                            <li><a href="order-consumer.html">consumer orders</a></li>
+                            <li><a href="order-recall.html">recall Item</a></li>
+                            <li><a href="order-accept-recalls.html">Accept Recalls</a></li>
+                            <li><a href="order-returns.html">returns</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#credits-menu" role="button" aria-expanded="false" aria-controls="credits-menu"><i class="wesupply-discount"></i>Credits</a>
+                        <ul class="list-unstyled submenu collapse" id="credits-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="credit-notes.html">Credit Notes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#suppliers-menu" role="button" aria-expanded="false" aria-controls="suppliers-menu"><i class="wesupply-suppliers"></i>Suppliers</a>
+                        <ul class="list-unstyled submenu collapse" id="suppliers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="suppliers-list.html">Suppliers list</a></li>
+                            <li><a href="suppliers-add-new.html">Add new supplier</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#customers-menu" role="button" aria-expanded="false" aria-controls="customers-menu"><i class="wesupply-customers"></i>Customers</a>
+                        <ul class="list-unstyled submenu collapse" id="customers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="customer-retailer-list.html">retailer list</a></li>
+                            <li><a href="customer-add-retailer.html">add retailer</a></li>
+                            <li><a href="customer-consumer-list.html">consumer list</a></li>
+                            <li><a href="customer-add-consumer.html">add consumer</a></li>
+                            <li><a href="customer-groups.html">Groups</a></li>
+                            <li><a href="customer-group-manager.html">Group manager</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#Payments-rebates-menu" role="button" aria-expanded="false" aria-controls="Payments-rebates-menu"><i class="wesupply-discount"></i>Payments &#38; rebates</a>
+                        <ul class="list-unstyled submenu collapse" id="Payments-rebates-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="payments-rebates-product-rebate-list.html">Product rebate list</a></li>
+                            <li><a href="Payments-rebates-group-manager-rebate.html">Group Manager rebate</a></li>
+                            <li><a href="Payments-rebates-supplier-payment.html">Supplier payment</a></li>
+                            <li><a href="Payments-rebates-supplier-stock-refund.html">Supplier stock refund</a></li>
+                            <li><a href="Payments-rebates-mgr-commission.html">Mgr. commission</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="email-templates.html"><i class="wesupply-email-templates"></i>Email Templates</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#account-menu" role="button" aria-expanded="false" aria-controls="account-menu"><i class="wesupply-account-manager"></i>Account Manager</a>
+                        <ul class="list-unstyled submenu collapse" id="account-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="account-manager-all.html">all acc. managers</a></li>
+                            <li><a href="account-manager-add-new.html">add new</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="taxes.html"><i class="wesupply-discount"></i>taxes</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#shipping-mng-menu" role="button" aria-expanded="false" aria-controls="shipping-mng-menu"><i class="wesupply-order"></i>shipping Mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="shipping-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="shipping-mng-shipment-rate.html">Shipment rate</a></li>
+                            <li><a href="shipping-mng-manage-city.html">Manage city</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="false" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-supplier-stock.html">Supplier stock</a></li>
+                            <li><a href="report-supplier-return-stock.html">Supplier return stock</a></li>
+                            <li><a href="report-group-retailer-rebate.html">group retailer rebate</a></li>
+                            <li><a href="report-retailer-rebate.html">retailer rebate</a></li>
+                            <li><a href="report-product-rebate.html">product rebate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="discount.html"><i class="wesupply-discount"></i>Discount</a></li>
+                    <li><a href="cms-pages.html"><i class="wesupply-pages"></i>cms pages</a></li>
+                    <li><a href="blog-pages.html"><i class="wesupply-pages"></i>Blog page</a></li>
+                    <li><a href="testimonial.html"><i class="wesupply-pages"></i>Testimonial</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="table-main">
+                <h4 class="box-title"><a href="inventory-stock-adjustment-list.html"><i class="fa-solid fa-chevron-left"></i></a>Edit stock adjustment</h4>
+                <div class="comn-table-header comn-table-header-2 align-items-end">
+                    <div class="comn-table-header-leftside">
+                        <div class="comn-table-length">
+                            <span>Showing</span>
+                            <select id="edit-stock-adjustment-datatable-length" class="comn-form-select">
+                               <option value="10">10</option>
+                               <option value="25">25</option>
+                               <option value="50">50</option>
+                               <option value="100">100</option>
+                           </select>
+                            <span>entries From <strong id="edit-stock-adjustment-datatable-entries"></strong> Entries</span>
+                        </div>
+                    </div>
+                    <div class="comn-table-header-rightside comn-table-header-rightside-2">
+                        <div class="comn-table-header-btn-row align-items-center">
+                            <aside class="invoice-text">Invoice no. : <span>563251</span></aside>
+                            <aside class="invoice-total-text">total value : <span>$221.20</span></aside>
+                        </div>
+                        <input type="text" id="edit-stock-adjustment-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                    </div>
+                </div>
+                <table class="table" id="edit-stock-adjustment">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" class="comn-form-checkbox"></th>
+                            <th>item</th>
+                            <th>product title</th>
+                            <th>ordered qty</th>
+                            <th>adjust qty</th>
+                            <th>reason</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>10</td>
+                            <td><input type="text" class="comn-form-control" placeholder="4"></td>
+                            <td>
+                                <select class="comn-form-select" outside>
+                                    <option value="">select stock</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                 </select>
+                            </td>
+                            <td><input type="text" class="comn-form-control" placeholder="$54"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>10</td>
+                            <td><input type="text" class="comn-form-control" placeholder="4"></td>
+                            <td>
+                                <select class="comn-form-select" outside>
+                                    <option value="">select stock</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                 </select>
+                            </td>
+                            <td><input type="text" class="comn-form-control" placeholder="$54"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>10</td>
+                            <td><input type="text" class="comn-form-control" placeholder="4"></td>
+                            <td>
+                                <select class="comn-form-select" outside>
+                                    <option value="">select stock</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                 </select>
+                            </td>
+                            <td><input type="text" class="comn-form-control" placeholder="$54"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>10</td>
+                            <td><input type="text" class="comn-form-control" placeholder="4"></td>
+                            <td>
+                                <select class="comn-form-select" outside>
+                                    <option value="">select stock</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                 </select>
+                            </td>
+                            <td><input type="text" class="comn-form-control" placeholder="$54"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>10</td>
+                            <td><input type="text" class="comn-form-control" placeholder="4"></td>
+                            <td>
+                                <select class="comn-form-select" outside>
+                                    <option value="">select stock</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                 </select>
+                            </td>
+                            <td><input type="text" class="comn-form-control" placeholder="$54"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563245</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>10</td>
+                            <td><input type="text" class="comn-form-control" placeholder="4"></td>
+                            <td>
+                                <select class="comn-form-select" outside>
+                                    <option value="">select stock</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                 </select>
+                            </td>
+                            <td><input type="text" class="comn-form-control" placeholder="$54"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="order-process-footer justify-content-end">
+                    <div class="comn-btn-row">
+                        <button class="comn-btn comn-btn-secondary">cancel</button>
+                        <button class="comn-btn">save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+            var editStockAdjustmentDatatable = $('#edit-stock-adjustment').DataTable({
+                sDom: '<"comn-table"rt><"comn-table-footer"p>',
+                language: {
+                    paginate: datatablePagination,
+                    zeroRecords: datatableNoRecord,
+                },
+                order: [],
+                columnDefs: [{
+                    targets: [0],
+                    orderable: false
+                }],
+            });
+
+            function updateTotalEntriesCount() {
+                var pageInfo = editStockAdjustmentDatatable.page.info();
+                $('#edit-stock-adjustment-datatable-entries').text(pageInfo.recordsDisplay);
+            }
+            updateTotalEntriesCount();
+
+            $('#edit-stock-adjustment-datatable-length').change(function() {
+                editStockAdjustmentDatatable.page.len($(this).val()).draw();
+                updateTotalEntriesCount();
+            });
+
+            $('#edit-stock-adjustment-datatable-search').on('keyup', function() {
+                editStockAdjustmentDatatable.search(this.value).draw();
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Add New Consumer Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li><a href="settings.html"><i class="wesupply-setting"></i>Settings</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#products-menu" role="button" aria-expanded="false" aria-controls="products-menu"><i class="wesupply-product"></i>Products</a>
+                        <ul class="list-unstyled submenu collapse" id="products-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="product-list.html">Product List</a></li>
+                            <li><a href="product-add.html">Add Product</a></li>
+                            <li><a href="product-types.html">product types</a></li>
+                            <li><a href="product-category.html">Category</a></li>
+                            <li><a href="product-tags.html">Tags</a></li>
+                            <li><a href="product-attributes.html">Attributes</a></li>
+                            <li><a href="product-return-criteria.html">Return Criteria</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#inventory-mng-menu" role="button" aria-expanded="false" aria-controls="inventory-mng-menu"><i class="wesupply-product"></i>inventory mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="inventory-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="inventory-stock-adjustment-list.html">stock adjustment list</a></li>
+                            <li><a href="inventory-add-stock-adjustment.html">Add stock adjustment</a></li>
+                            <li><a href="inventory.html">inventory</a></li>
+                            <li><a href="inventory-stock-mng-reasons.html">Stock Mng. Reasons</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#users-menu" role="button" aria-expanded="false" aria-controls="users-menu"><i class="wesupply-account"></i>Users</a>
+                        <ul class="list-unstyled submenu collapse" id="users-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="user-list.html">User List</a></li>
+                            <li><a href="user-roles-permission.html">Roles &amp; permissions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="false" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-list.html">order list</a></li>
+                            <li><a href="order-add-new.html">add new order</a></li>
+                            <li><a href="order-retailers.html">retailer orders</a></li>
+                            <li><a href="order-consumer.html">consumer orders</a></li>
+                            <li><a href="order-recall.html">recall Item</a></li>
+                            <li><a href="order-accept-recalls.html">Accept Recalls</a></li>
+                            <li><a href="order-returns.html">returns</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#credits-menu" role="button" aria-expanded="false" aria-controls="credits-menu"><i class="wesupply-discount"></i>Credits</a>
+                        <ul class="list-unstyled submenu collapse" id="credits-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="credit-notes.html">Credit Notes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#suppliers-menu" role="button" aria-expanded="false" aria-controls="suppliers-menu"><i class="wesupply-suppliers"></i>Suppliers</a>
+                        <ul class="list-unstyled submenu collapse" id="suppliers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="suppliers-list.html">Suppliers list</a></li>
+                            <li><a href="suppliers-add-new.html">Add new supplier</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#customers-menu" role="button" aria-expanded="true" aria-controls="customers-menu"><i class="wesupply-customers"></i>Customers</a>
+                        <ul class="list-unstyled submenu collapse show" id="customers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="customer-retailer-list.html">retailer list</a></li>
+                            <li><a href="customer-add-retailer.html">add retailer</a></li>
+                            <li><a href="customer-consumer-list.html">consumer list</a></li>
+                            <li class="active"><a href="customer-add-consumer.html">add consumer</a></li>
+                            <li><a href="customer-groups.html">Groups</a></li>
+                            <li><a href="customer-group-manager.html">Group manager</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#Payments-rebates-menu" role="button" aria-expanded="false" aria-controls="Payments-rebates-menu"><i class="wesupply-discount"></i>Payments &#38; rebates</a>
+                        <ul class="list-unstyled submenu collapse" id="Payments-rebates-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="payments-rebates-product-rebate-list.html">Product rebate list</a></li>
+                            <li><a href="Payments-rebates-group-manager-rebate.html">Group Manager rebate</a></li>
+                            <li><a href="Payments-rebates-supplier-payment.html">Supplier payment</a></li>
+                            <li><a href="Payments-rebates-supplier-stock-refund.html">Supplier stock refund</a></li>
+                            <li><a href="Payments-rebates-mgr-commission.html">Mgr. commission</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="email-templates.html"><i class="wesupply-email-templates"></i>Email Templates</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#account-menu" role="button" aria-expanded="false" aria-controls="account-menu"><i class="wesupply-account-manager"></i>Account Manager</a>
+                        <ul class="list-unstyled submenu collapse" id="account-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="account-manager-all.html">all acc. managers</a></li>
+                            <li><a href="account-manager-add-new.html">add new</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="taxes.html"><i class="wesupply-discount"></i>taxes</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#shipping-mng-menu" role="button" aria-expanded="false" aria-controls="shipping-mng-menu"><i class="wesupply-order"></i>shipping Mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="shipping-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="shipping-mng-shipment-rate.html">Shipment rate</a></li>
+                            <li><a href="shipping-mng-manage-city.html">Manage city</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="false" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-supplier-stock.html">Supplier stock</a></li>
+                            <li><a href="report-supplier-return-stock.html">Supplier return stock</a></li>
+                            <li><a href="report-group-retailer-rebate.html">group retailer rebate</a></li>
+                            <li><a href="report-retailer-rebate.html">retailer rebate</a></li>
+                            <li><a href="report-product-rebate.html">product rebate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="discount.html"><i class="wesupply-discount"></i>Discount</a></li>
+                    <li><a href="cms-pages.html"><i class="wesupply-pages"></i>cms pages</a></li>
+                    <li><a href="blog-pages.html"><i class="wesupply-pages"></i>Blog page</a></li>
+                    <li><a href="testimonial.html"><i class="wesupply-pages"></i>Testimonial</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="white-comn-box mb-0">
+                <h4 class="box-title">Add new consumer</h4>
+                <div class="white-comn-box-body">
+                    <div class="comn-small-title"><span>Personal Information</span></div>
+                    <div class="product-grid-row">
+                        <div class="product-grid-card full-grid">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">First Name</label>
+                                        <input type="text" class="comn-form-control" placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Email</label>
+                                        <input type="text" class="comn-form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Contact Number</label>
+                                        <input type="text" class="comn-form-control" placeholder="Contact Number">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Last Name</label>
+                                        <input type="text" class="comn-form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Password</label>
+                                        <input type="text" class="comn-form-control" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comn-small-title"><span>billing address Details</span></div>
+                    <div class="product-grid-row">
+                        <div class="product-grid-card full-grid">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">City</label>
+                                                <input type="text" class="comn-form-control" placeholder="City">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">Country</label>
+                                                <select class="comn-form-select">
+                                                  <option value="">Country</option>
+                                                  <option>Option 1</option>
+                                                  <option>Option 2</option>
+                                                  <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">Province</label>
+                                                <select class="comn-form-select">
+                                                  <option value="">Province</option>
+                                                  <option>Option 1</option>
+                                                  <option>Option 2</option>
+                                                  <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">Postal code</label>
+                                                <input type="text" class="comn-form-control" placeholder="Postal code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Street Address</label>
+                                        <textarea class="comn-form-control h-116" placeholder="Street Address"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shipping-address-container">
+                        <div class="shippng-address-row">
+                            <div class="comn-small-title"><span>shippng address Details</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group">
+                                                        <label class="comn-form-label">City</label>
+                                                        <input type="text" class="comn-form-control" placeholder="City">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group">
+                                                        <label class="comn-form-label">Country</label>
+                                                        <select class="comn-form-select">
+                                                          <option value="">Country</option>
+                                                          <option>Option 1</option>
+                                                          <option>Option 2</option>
+                                                          <option>Option 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group">
+                                                        <label class="comn-form-label">Province</label>
+                                                        <select class="comn-form-select">
+                                                          <option value="">Province</option>
+                                                          <option>Option 1</option>
+                                                          <option>Option 2</option>
+                                                          <option>Option 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group">
+                                                        <label class="comn-form-label">Postal code</label>
+                                                        <input type="text" class="comn-form-control" placeholder="Postal code">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">Street Address</label>
+                                                <textarea class="comn-form-control h-116" placeholder="Street Address"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="comn-form-switch-row customer-switch">
+                                                <div class="form-check form-switch comn-form-check">
+                                                    <label class="form-check-label">Preferred address :</label>
+                                                    <input class="form-check-input" type="radio" role="switch" name="PreferredAddress">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="volume-btn-row mt-0 mb-4">
+                        <div class="gap-10">
+                            <button class="comn-btn comn-btn-secondary add-Shippng-btn mt-0"><i class="fa-solid fa-plus min-w-auto"></i>new shippng address</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6">
+                            <div class="comn-small-title"><span>Account Management Preferences</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Account Manager</label>
+                                        <select class="comn-form-select">
+                                          <option value="">Account Manager</option>
+                                          <option>Option 1</option>
+                                          <option>Option 2</option>
+                                          <option>Option 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="comn-form-group mb-0">
+                                        <div class="comn-form-switch-row min-h-auto">
+                                            <div class="form-check form-switch comn-form-check">
+                                                <label class="form-check-label" for="news-letter">News Letter Subscription :</label>
+                                                <input class="form-check-input" type="checkbox" role="switch" id="news-letter">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="comn-small-title">
+                                <span>
+                                    <input type="checkbox" class="comn-form-checkbox" id="minimum-order-value" onchange="toggleMinimumOrder()">
+                                    <label for="minimum-order-value" class="cursor-pointer">Minimum order value</label>
+                                </span>
+                            </div>
+                            <div class="product-grid-row minimum-order-row" style="display: none;">
+                                <div class="product-grid-card full-grid">
+                                    <div class="comn-form-group mb-0">
+                                        <label class="comn-form-label">min. order value</label>
+                                        <input type="text" class="comn-form-control" placeholder="min. order value">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="comn-small-title">
+                                <span>
+                                    <div class="comn-form-switch-row min-h-auto">
+                                        <div class="form-check comn-form-check">
+                                            <input class="form-check-input" type="radio" name="chargeRules" id="as-charges" onchange="toggleShipping()">
+                                            <label class="form-check-label" for="as-charges">Apply shipping charges</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="form-check-input" type="radio" name="chargeRules" id="as-rules" onchange="toggleShipping()">
+                                            <label class="form-check-label" for="as-rules">Apply shipping rules</label>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="product-grid-row shipping-charge-row pb-0" style="display: none;">
+                                <div class="product-grid-card full-grid">
+                                    <div class="comn-form-group mb-0">
+                                        <label class="comn-form-label">Shipping charges</label>
+                                        <input type="text" class="comn-form-control" placeholder="Shipping charges">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comn-small-title mt-3"><span>Payment Notification Setting</span></div>
+                    <div class="product-grid-row">
+                        <div class="product-grid-card full-grid">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Payment Terms</label>
+                                        <input type="text" class="comn-form-control" placeholder="Payment Terms">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Reminder Frequency</label>
+                                        <input type="text" class="comn-form-control" placeholder="Reminder Frequency">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 align-self-center">
+                                    <div class="comn-form-group mb-0">
+                                        <div class="comn-form-switch-row">
+                                            <div class="form-check form-switch comn-form-check">
+                                                <label class="form-check-label" for="send-payment-reminders">Send Payment Reminders :</label>
+                                                <input class="form-check-input" type="checkbox" role="switch" id="send-payment-reminders">
+                                            </div>
+                                            <div class="form-check form-switch comn-form-check">
+                                                <label class="form-check-label" for="order-status">order status</label>
+                                                <input class="form-check-input" type="checkbox" role="switch" id="order-status">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="comn-small-title"><span>Rebate Payout Options</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <div class="comn-form-switch-row order-switch-row mt-0">
+                                        <div class="form-check comn-form-check">
+                                            <input class="comn-form-checkbox" type="checkbox" id="cheque">
+                                            <label class="form-check-label" for="cheque">Cheque</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="comn-form-checkbox" type="checkbox" id="eTransfer">
+                                            <label class="form-check-label" for="eTransfer">eTransfer</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="comn-form-checkbox" type="checkbox" id="debitCreditCard">
+                                            <label class="form-check-label" for="debitCreditCard">Debit/Credit Card</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="comn-form-checkbox" type="checkbox" id="cod">
+                                            <label class="form-check-label" for="cod">COD (cash On Delivery)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="comn-small-title"><span>Accept payment</span></div>
+                            <div class="product-grid-row">
+                                <div class="product-grid-card full-grid">
+                                    <div class="comn-form-switch-row order-switch-row mt-0">
+                                        <div class="form-check comn-form-check">
+                                            <input class="comn-form-checkbox" type="checkbox" id="cheque2">
+                                            <label class="form-check-label" for="cheque2">Cheque</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="comn-form-checkbox" type="checkbox" id="eTransfer2">
+                                            <label class="form-check-label" for="eTransfer2">eTransfer</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="comn-form-checkbox" type="checkbox" id="debitCreditCard2">
+                                            <label class="form-check-label" for="debitCreditCard2">Debit/Credit Card</label>
+                                        </div>
+                                        <div class="form-check comn-form-check">
+                                            <input class="comn-form-checkbox" type="checkbox" id="cod2">
+                                            <label class="form-check-label" for="cod2">COD (cash On Delivery)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comn-small-title"><span>Notification Settings</span></div>
+                    <div class="product-grid-row">
+                        <div class="product-grid-card full-grid">
+                            <div class="comn-form-group">
+                                <div class="comn-form-switch-row">
+                                    <div class="form-check form-switch comn-form-check">
+                                        <label class="form-check-label" for="send-payment-reminders2">Send Payment Reminders :</label>
+                                        <input class="form-check-input" type="checkbox" role="switch" id="send-payment-reminders2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-xl-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Statement Reminder</label>
+                                        <select class="comn-form-select">
+                                            <option value="">Statement Reminder</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comn-btn-row">
+                        <button class="comn-btn comn-btn-secondary">cancel</button>
+                        <button class="comn-btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addAddressBtn = document.querySelector('.add-Shippng-btn');
+            const container = document.querySelector('.shipping-address-container');
+
+            function initializeTomSelect(el) {
+                let settings = {};
+                if (el.hasAttribute('multiple')) {
+                    settings.plugins = ['remove_button'];
+                }
+                new TomSelect(el, settings);
+            }
+
+            function handleDeleteClick(event) {
+                const deleteBtn = event.target.closest('.delete-btn');
+                if (deleteBtn) {
+                    const addressRow = deleteBtn.closest('.shipping-address-row');
+                    if (addressRow) {
+                        addressRow.remove();
+                    }
+                }
+            }
+            addAddressBtn.addEventListener('click', function() {
+                const newAddressRow = document.createElement('div');
+                newAddressRow.classList.add('shipping-address-row');
+                newAddressRow.innerHTML = `
+                    <div class="comn-small-title">
+                        <span>Shipping Address Details</span>
+                        <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                    </div>
+                    <div class="product-grid-row">
+                        <div class="product-grid-card full-grid">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">City</label>
+                                                <input type="text" class="comn-form-control" placeholder="City">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">Country</label>
+                                                <select class="comn-form-select">
+                                                  <option value="">Country</option>
+                                                  <option>Option 1</option>
+                                                  <option>Option 2</option>
+                                                  <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">Province</label>
+                                                <select class="comn-form-select">
+                                                  <option value="">Province</option>
+                                                  <option>Option 1</option>
+                                                  <option>Option 2</option>
+                                                  <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="comn-form-group">
+                                                <label class="comn-form-label">Postal code</label>
+                                                <input type="text" class="comn-form-control" placeholder="Postal code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="comn-form-group">
+                                        <label class="comn-form-label">Street Address</label>
+                                        <textarea class="comn-form-control h-116" placeholder="Street Address"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="comn-form-switch-row customer-switch">
+                                        <div class="form-check form-switch comn-form-check">
+                                            <label class="form-check-label">Preferred address :</label>
+                                            <input class="form-check-input" type="radio" role="switch" name="PreferredAddress">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(newAddressRow);
+                newAddressRow.querySelectorAll('.comn-form-select').forEach(function(select) {
+                    initializeTomSelect(select);
+                });
+            });
+            container.addEventListener('click', handleDeleteClick);
+        });
+    </script>
+
+    <script>
+        function toggleMinimumOrder() {
+            var checkbox = document.getElementById("minimum-order-value");
+            var row = document.querySelector(".minimum-order-row");
+            if (checkbox.checked) {
+                row.style.display = "grid";
+            } else {
+                row.style.display = "none";
+            }
+        }
+
+        function toggleShipping() {
+            var asCharges = document.getElementById("as-charges");
+            var row = document.querySelector(".shipping-charge-row");
+            if (asCharges.checked) {
+                row.style.display = "grid";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

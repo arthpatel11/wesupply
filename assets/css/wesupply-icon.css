@@ -1,0 +1,166 @@
+@font-face {
+    font-display: auto;
+    font-family: "wesupply";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../webfonts/iconly.eot?1715171170614");
+    src: url("../webfonts/iconly.eot?#iefix") format("embedded-opentype"), url("../webfonts/iconly.woff2?1715171170614") format("woff2"), url("../webfonts/iconly.woff?1715171170614") format("woff"), url("../webfonts/iconly.ttf?1715171170614") format("truetype"), url("../webfonts/iconly.svg?1715171170614#wesupply") format("svg");
+}
+
+[class="wesupply"],
+[class^="wesupply-"],
+[class*=" wesupply-"] {
+    display: inline-block;
+    font-family: "wesupply" !important;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wesupply-sign-out:before {
+    content: "\e000";
+}
+
+.wesupply-account:before {
+    content: "\e001";
+}
+
+.wesupply-zone:before {
+    content: "\e002";
+}
+
+.wesupply-suppliers:before {
+    content: "\e003";
+}
+
+.wesupply-setting:before {
+    content: "\e004";
+}
+
+.wesupply-reports:before {
+    content: "\e005";
+}
+
+.wesupply-product:before {
+    content: "\e006";
+}
+
+.wesupply-pages:before {
+    content: "\e007";
+}
+
+.wesupply-order:before {
+    content: "\e008";
+}
+
+.wesupply-mgr-comission:before {
+    content: "\e009";
+}
+
+.wesupply-email-templates:before {
+    content: "\e00a";
+}
+
+.wesupply-discount:before {
+    content: "\e00b";
+}
+
+.wesupply-dashboard:before {
+    content: "\e00c";
+}
+
+.wesupply-customers:before {
+    content: "\e00d";
+}
+
+.wesupply-account-manager:before {
+    content: "\e00e";
+}
+
+.wesupply-import:before {
+    content: "\e00f";
+}
+
+.wesupply-export:before {
+    content: "\e010";
+}
+
+.wesupply-edit:before {
+    content: "\e011";
+}
+
+.wesupply-delete:before {
+    content: "\e012";
+}
+
+.wesupply-barcode:before {
+    content: "\e013";
+}
+
+.wesupply-barcode-2:before {
+    content: "\e01b";
+}
+
+.wesupply-handle:before {
+    content: "\e014";
+}
+
+.wesupply-sort-up:before {
+    content: "\e015";
+}
+
+.wesupply-sort-down:before {
+    content: "\e016";
+}
+
+.wesupply-shipping:before {
+    content: "\e017";
+}
+
+.wesupply-process-order:before {
+    content: "\e018";
+}
+
+.wesupply-analytics:before {
+    content: "\e019";
+}
+
+.wesupply-pdf:before {
+    content: "\e01a";
+}
+
+.wesupply-excel:before {
+    content: "\e01c";
+}
+
+.wesupply-pos:before {
+    content: "\e01d";
+}
+
+.wesupply-print:before {
+    content: "\e01e";
+}
+
+.wesupply-cart:before {
+    content: "\e01f";
+}
+
+.wesupply-revise-cart:before {
+    content: "\e020";
+}
+
+.wesupply-review-order:before {
+    content: "\e021";
+}
+
+.wesupply-order-confirm:before {
+    content: "\e022";
+}
+
+.wesupply-quantity:before {
+    content: "\e023";
+}

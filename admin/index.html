@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Admin - Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#changePasswordModal"><i class="fa-solid fa-lock"></i>Change Password</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li class="active"><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li><a href="settings.html"><i class="wesupply-setting"></i>Settings</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#products-menu" role="button" aria-expanded="false" aria-controls="products-menu"><i class="wesupply-product"></i>Products</a>
+                        <ul class="list-unstyled submenu collapse" id="products-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="product-list.html">Product List</a></li>
+                            <li><a href="product-add.html">Add Product</a></li>
+                            <li><a href="product-types.html">product types</a></li>
+                            <li><a href="product-category.html">Category</a></li>
+                            <li><a href="product-tags.html">Tags</a></li>
+                            <li><a href="product-attributes.html">Attributes</a></li>
+                            <li><a href="product-return-criteria.html">Return Criteria</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#inventory-mng-menu" role="button" aria-expanded="false" aria-controls="inventory-mng-menu"><i class="wesupply-product"></i>inventory mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="inventory-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="inventory-stock-adjustment-list.html">stock adjustment list</a></li>
+                            <li><a href="inventory-add-stock-adjustment.html">Add stock adjustment</a></li>
+                            <li><a href="inventory.html">inventory</a></li>
+                            <li><a href="inventory-stock-mng-reasons.html">Stock Mng. Reasons</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#users-menu" role="button" aria-expanded="false" aria-controls="users-menu"><i class="wesupply-account"></i>Users</a>
+                        <ul class="list-unstyled submenu collapse" id="users-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="user-list.html">User List</a></li>
+                            <li><a href="user-roles-permission.html">Roles &amp; permissions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="false" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-list.html">order list</a></li>
+                            <li><a href="order-add-new.html">add new order</a></li>
+                            <li><a href="order-retailers.html">retailer orders</a></li>
+                            <li><a href="order-consumer.html">consumer orders</a></li>
+                            <li><a href="order-recall.html">recall Item</a></li>
+                            <li><a href="order-accept-recalls.html">Accept Recalls</a></li>
+                            <li><a href="order-returns.html">returns</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#credits-menu" role="button" aria-expanded="false" aria-controls="credits-menu"><i class="wesupply-discount"></i>Credits</a>
+                        <ul class="list-unstyled submenu collapse" id="credits-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="credit-notes.html">Credit Notes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#suppliers-menu" role="button" aria-expanded="false" aria-controls="suppliers-menu"><i class="wesupply-suppliers"></i>Suppliers</a>
+                        <ul class="list-unstyled submenu collapse" id="suppliers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="suppliers-list.html">Suppliers list</a></li>
+                            <li><a href="suppliers-add-new.html">Add new supplier</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#customers-menu" role="button" aria-expanded="false" aria-controls="customers-menu"><i class="wesupply-customers"></i>Customers</a>
+                        <ul class="list-unstyled submenu collapse" id="customers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="customer-retailer-list.html">retailer list</a></li>
+                            <li><a href="customer-add-retailer.html">add retailer</a></li>
+                            <li><a href="customer-consumer-list.html">consumer list</a></li>
+                            <li><a href="customer-add-consumer.html">add consumer</a></li>
+                            <li><a href="customer-groups.html">Groups</a></li>
+                            <li><a href="customer-group-manager.html">Group manager</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#Payments-rebates-menu" role="button" aria-expanded="false" aria-controls="Payments-rebates-menu"><i class="wesupply-discount"></i>Payments &#38; rebates</a>
+                        <ul class="list-unstyled submenu collapse" id="Payments-rebates-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="payments-rebates-product-rebate-list.html">Product rebate list</a></li>
+                            <li><a href="Payments-rebates-group-manager-rebate.html">Group Manager rebate</a></li>
+                            <li><a href="Payments-rebates-supplier-payment.html">Supplier payment</a></li>
+                            <li><a href="Payments-rebates-supplier-stock-refund.html">Supplier stock refund</a></li>
+                            <li><a href="Payments-rebates-mgr-commission.html">Mgr. commission</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="email-templates.html"><i class="wesupply-email-templates"></i>Email Templates</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#account-menu" role="button" aria-expanded="false" aria-controls="account-menu"><i class="wesupply-account-manager"></i>Account Manager</a>
+                        <ul class="list-unstyled submenu collapse" id="account-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="account-manager-all.html">all acc. managers</a></li>
+                            <li><a href="account-manager-add-new.html">add new</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="taxes.html"><i class="wesupply-discount"></i>taxes</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#shipping-mng-menu" role="button" aria-expanded="false" aria-controls="shipping-mng-menu"><i class="wesupply-order"></i>shipping Mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="shipping-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="shipping-mng-shipment-rate.html">Shipment rate</a></li>
+                            <li><a href="shipping-mng-manage-city.html">Manage city</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="false" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-supplier-stock.html">Supplier stock</a></li>
+                            <li><a href="report-supplier-return-stock.html">Supplier return stock</a></li>
+                            <li><a href="report-group-retailer-rebate.html">group retailer rebate</a></li>
+                            <li><a href="report-retailer-rebate.html">retailer rebate</a></li>
+                            <li><a href="report-product-rebate.html">product rebate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="discount.html"><i class="wesupply-discount"></i>Discount</a></li>
+                    <li><a href="cms-pages.html"><i class="wesupply-pages"></i>cms pages</a></li>
+                    <li><a href="blog-pages.html"><i class="wesupply-pages"></i>Blog page</a></li>
+                    <li><a href="testimonial.html"><i class="wesupply-pages"></i>Testimonial</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="white-comn-box">
+                <h4 class="box-title">Filter</h4>
+                <div class="white-comn-box-body">
+                    <div class="dashboard-filter-row">
+                        <div class="dashboard-filter-box">
+                            <h5>Customer type</h5>
+                            <div class="filter-box-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="CustomerType" id="retailer" checked>
+                                    <label class="form-check-label" for="retailer">retailer</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="CustomerType" id="cosumer">
+                                    <label class="form-check-label" for="cosumer">cosumer</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="CustomerType" id="both">
+                                    <label class="form-check-label" for="both">both</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="CustomerType" id="selectcustomer">
+                                    <label class="form-check-label" for="selectcustomer">select customer</label>
+                                </div>
+                                <div class="comn-form-group mb-0 mt-2" id="select-customer-box" style="display: none;">
+                                    <label class="comn-form-label">select customer</label>
+                                    <select class="comn-form-select">
+                                        <option value="">Select Customer</option>
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-filter-box">
+                            <h5>order type</h5>
+                            <div class="filter-box-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="OrderType" id="all" checked>
+                                    <label class="form-check-label" for="all">All</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="OrderType" id="mics">
+                                    <label class="form-check-label" for="mics">Mics</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="OrderType" id="walkin">
+                                    <label class="form-check-label" for="walkin">walk in</label>
+                                </div>
+                                <div class="comn-form-group">
+                                    <label class="comn-form-label">select Account manager</label>
+                                    <select class="comn-form-select">
+                                        <option value="">Select Account manager</option>
+                                        <option value="1">Account manager 1</option>
+                                        <option value="2">Account manager 2</option>
+                                        <option value="3">Account manager 3</option>
+                                    </select>
+                                </div>
+                                <div class="comn-form-group mb-0">
+                                    <label class="comn-form-label">order number</label>
+                                    <input type="text" class="comn-form-control" placeholder="order number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-filter-box">
+                            <h5>duration</h5>
+                            <div class="filter-box-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Duration" id="today" checked>
+                                    <label class="form-check-label" for="today">today</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Duration" id="last 7 days">
+                                    <label class="form-check-label" for="last 7 days">last 7 days</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Duration" id="last 15 days">
+                                    <label class="form-check-label" for="last 15 days">last 15 days</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Duration" id="last 30 days">
+                                    <label class="form-check-label" for="last 30 days">last 30 days</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Duration" id="last 90 days">
+                                    <label class="form-check-label" for="last 90 days">last 90 days</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Duration" id="date-range">
+                                    <label class="form-check-label" for="date-range">Date range</label>
+                                </div>
+                                <div class="comn-form-group mb-0 mt-2" id="duration-date-range" style="display: none;">
+                                    <label class="comn-form-label">select date range</label>
+                                    <div class="datepicker-container">
+                                        <input type="text" class="comn-range-datepicker comn-form-control" placeholder="Search date range">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="white-comn-box">
+                <h4 class="box-title">orders</h4>
+                <div class="white-comn-box-body">
+                    <div class="dashboard-orders-row">
+                        <div class="dashboard-orders-box green-box">
+                            <span class="order-label">Total no. of order</span>
+                            <p class="order-value">1500 +</p>
+                        </div>
+                        <div class="dashboard-orders-box blue-box">
+                            <span class="order-label">Confirm orders</span>
+                            <p class="order-value">1000 +</p>
+                        </div>
+                        <div class="dashboard-orders-box orange-box">
+                            <span class="order-label">Pending orders</span>
+                            <p class="order-value">200 +</p>
+                        </div>
+                        <div class="dashboard-orders-box purple-box">
+                            <span class="order-label">Cancelled orders</span>
+                            <p class="order-value">250 +</p>
+                        </div>
+                        <div class="dashboard-orders-box red-box">
+                            <span class="order-label">recall order</span>
+                            <p class="order-value">50 +</p>
+                        </div>
+                        <div class="dashboard-orders-box total-box">
+                            <span class="order-label">total credit</span>
+                            <p class="order-value">$1500.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="white-comn-box">
+                <h4 class="box-title">cashflows</h4>
+                <div class="white-comn-box-body">
+                    <div class="dashboard-cashflows-row">
+                        <div class="dashboard-cashflows-box total-sales">
+                            <span class="order-label">Total Sales</span>
+                            <p class="order-value">$268.86</p>
+                        </div>
+                        <div class="dashboard-cashflows-box total-refund">
+                            <span class="order-label">Total Refund Sales</span>
+                            <p class="order-value">$0.00</p>
+                        </div>
+                        <div class="dashboard-cashflows-box total-cancelled">
+                            <span class="order-label">Total Cancelled Sales</span>
+                            <p class="order-value">$0.00</p>
+                        </div>
+                        <div class="dashboard-cashflows-box total-net">
+                            <span class="order-label">Total Net Sales</span>
+                            <p class="order-value">$150.86</p>
+                        </div>
+                        <div class="dashboard-cashflows-box total-unpaid">
+                            <span class="order-label">Total Unpaid Sales</span>
+                            <p class="order-value">$50.86</p>
+                        </div>
+                        <div class="dashboard-cashflows-box total-paid">
+                            <span class="order-label">Total Paid Sales</span>
+                            <p class="order-value">$68.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-tables">
+                <div class="table-main">
+                    <h4 class="box-title">top selling products</h4>
+                    <div class="comn-table-header">
+                        <div class="comn-table-header-leftside">
+                            <div class="comn-table-length">
+                                <span>Showing</span>
+                                <select id="top-selling-datatable-length" class="comn-form-select">
+                                    <option value="5">05</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                </select>
+                                <span>entries From <strong id="top-selling-datatable-entries"></strong> Entries</span>
+                            </div>
+                        </div>
+                        <div class="comn-table-header-rightside">
+                            <input type="text" id="top-selling-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                        </div>
+                    </div>
+                    <table class="table" id="top-selling">
+                        <thead>
+                            <tr>
+                                <th>item</th>
+                                <th>image</th>
+                                <th>Product name</th>
+                                <th>Product type</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>6578</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>SINUS NIGHT TB 200MG 40</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>Tuva zin vin</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>FLU XST CAPS 32</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>6578</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>SINUS NIGHT TB 200MG 40</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>Tuva zin vin</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>FLU XST CAPS 32</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-main">
+                    <h4 class="box-title">Top customers</h4>
+                    <div class="comn-table-header">
+                        <div class="comn-table-header-leftside">
+                            <div class="comn-table-length">
+                                <span>Showing</span>
+                                <select id="top-customer-datatable-length" class="comn-form-select">
+                                    <option value="5">05</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                </select>
+                                <span>entries From <strong id="top-customer-datatable-entries"></strong> Entries</span>
+                            </div>
+                        </div>
+                        <div class="comn-table-header-rightside">
+                            <input type="text" id="top-customer-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                        </div>
+                    </div>
+                    <table class="table" id="top-customer">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer</th>
+                                <th>type</th>
+                                <th>amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>563251</td>
+                                <td>Daniel Hamilton (drug pharmacy)</td>
+                                <td>retailer</td>
+                                <td>$54</td>
+                            </tr>
+                            <tr>
+                                <td>563252</td>
+                                <td>Chris Glasser (city pharmacy)</td>
+                                <td>consumer</td>
+                                <td>$50</td>
+                            </tr>
+                            <tr>
+                                <td>563253</td>
+                                <td>Daniel Hamilton (drug pharmacy)</td>
+                                <td>retailer</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>563254</td>
+                                <td>Chris Glasser (city pharmacy)</td>
+                                <td>consumer</td>
+                                <td>$39</td>
+                            </tr>
+                            <tr>
+                                <td>563255</td>
+                                <td>Daniel Hamilton (drug pharmacy)</td>
+                                <td>retailer</td>
+                                <td>$35</td>
+                            </tr>
+                            <tr>
+                                <td>563256</td>
+                                <td>Chris Glasser (city pharmacy)</td>
+                                <td>consumer</td>
+                                <td>$50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dashboard-tables">
+                <div class="table-main">
+                    <h4 class="box-title">Product Expiration</h4>
+                    <div class="comn-table-header">
+                        <div class="comn-date-range-row">
+                            <div class="comn-form-group">
+                                <label class="comn-form-label">From date</label>
+                                <div class="datepicker-container">
+                                    <input type="text" class="comn-datepicker comn-form-control" id="from-date-1" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="comn-form-group">
+                                <label class="comn-form-label">to date</label>
+                                <div class="datepicker-container">
+                                    <input type="text" class="comn-datepicker comn-form-control" id="to-date-1" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comn-table-header-leftside">
+                            <div class="comn-table-length">
+                                <span>Showing</span>
+                                <select id="product-expiration-datatable-length" class="comn-form-select">
+                                    <option value="5">05</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                </select>
+                                <span>entries From <strong id="product-expiration-datatable-entries"></strong> Entries</span>
+                            </div>
+                        </div>
+                        <div class="comn-table-header-rightside">
+                            <input type="text" id="product-expiration-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                        </div>
+                    </div>
+                    <table class="table" id="product-expiration">
+                        <thead>
+                            <tr>
+                                <th>item</th>
+                                <th>image</th>
+                                <th>Product name</th>
+                                <th>Product type</th>
+                                <th>Price</th>
+                                <th>Expiry date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                                <td>31 Mar 2024</td>
+                            </tr>
+                            <tr>
+                                <td>6578</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>SINUS NIGHT TB 200MG 40</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                                <td>30 Mar 2024</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>Tuva zin vin</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                                <td>29 Mar 2024</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>FLU XST CAPS 32</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                                <td>28 Mar 2024</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                                <td>31 Mar 2024</td>
+                            </tr>
+                            <tr>
+                                <td>6578</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>SINUS NIGHT TB 200MG 40</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                                <td>31 Mar 2024</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>Tuva zin vin</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                                <td>31 Mar 2024</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>FLU XST CAPS 32</td>
+                                <td>Drug</td>
+                                <td>$10</td>
+                                <td>31 Mar 2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-main">
+                    <h4 class="box-title">Low stock alert</h4>
+                    <div class="comn-table-header">
+                        <div class="comn-form-group mb-0 w-100">
+                            <label class="comn-form-label">select stock</label>
+                            <select class="comn-form-select">
+                                <option value="">select stock</option>
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                            </select>
+                        </div>
+                        <div class="comn-table-header-leftside">
+                            <div class="comn-table-length">
+                                <span>Showing</span>
+                                <select id="low-stock-datatable-length" class="comn-form-select">
+                                    <option value="5">05</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                </select>
+                                <span>entries From <strong id="low-stock-datatable-entries"></strong> Entries</span>
+                            </div>
+                        </div>
+                        <div class="comn-table-header-rightside">
+                            <input type="text" id="low-stock-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                        </div>
+                    </div>
+                    <table class="table" id="low-stock">
+                        <thead>
+                            <tr>
+                                <th>item</th>
+                                <th>image</th>
+                                <th>Product name</th>
+                                <th>supplier</th>
+                                <th>QTY</th>
+                                <th>available stock</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Daniel Hamilton (drug pharmacy)</td>
+                                <td>6</td>
+                                <td class="text-red">Out Of Stock</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Daniel Hamilton (drug pharmacy)</td>
+                                <td>6</td>
+                                <td class="text-green">171 In Stock</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Daniel Hamilton (drug pharmacy)</td>
+                                <td>6</td>
+                                <td class="text-red">Out Of Stock</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Daniel Hamilton (drug pharmacy)</td>
+                                <td>6</td>
+                                <td class="text-green">171 In Stock</td>
+                            </tr>
+                            <tr>
+                                <td>45456</td>
+                                <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                                <td>LIQUI-GELS 200MG 40</td>
+                                <td>Daniel Hamilton (drug pharmacy)</td>
+                                <td>6</td>
+                                <td class="text-green">171 In Stock</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal comn-modal comn-small-modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Change Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="comn-form-group">
+                        <label class="comn-form-label">Current Password</label>
+                        <div class="show-hide-password-row">
+                            <input type="password" class="comn-form-control" placeholder="••••••••••">
+                            <span class="show-hide-password-btn">
+                                <i class="fa-regular fa-eye-slash"></i>
+                                <i class="fa-regular fa-eye" style="display: none;"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="comn-form-group">
+                        <label class="comn-form-label">New Password</label>
+                        <div class="show-hide-password-row">
+                            <input type="password" class="comn-form-control" placeholder="••••••••••">
+                            <span class="show-hide-password-btn">
+                                <i class="fa-regular fa-eye-slash"></i>
+                                <i class="fa-regular fa-eye" style="display: none;"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="comn-form-group">
+                        <label class="comn-form-label">Confirm New Password</label>
+                        <div class="show-hide-password-row">
+                            <input type="password" class="comn-form-control" placeholder="••••••••••">
+                            <span class="show-hide-password-btn">
+                                <i class="fa-regular fa-eye-slash"></i>
+                                <i class="fa-regular fa-eye" style="display: none;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0 mt-0">
+                    <button type="button" class="comn-btn comn-btn-border" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="comn-btn">Change Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+            function initializeRadioBoxToggle(selectCustomerBoxId, selectCustomerRadioId, otherRadioGroupName) {
+                const $selectCustomerBox = $(selectCustomerBoxId);
+                const $selectCustomerRadio = $(selectCustomerRadioId);
+                const $otherRadios = $(`input[name="${otherRadioGroupName}"]:not(${selectCustomerRadioId})`);
+
+                function toggleSelectCustomerBox() {
+                    $selectCustomerBox.toggle($selectCustomerRadio.prop("checked"));
+                }
+
+                toggleSelectCustomerBox();
+
+                $selectCustomerRadio.change(toggleSelectCustomerBox);
+
+                $otherRadios.change(function() {
+                    $selectCustomerBox.hide();
+                });
+            }
+
+            initializeRadioBoxToggle("#select-customer-box", "#selectcustomer", "CustomerType");
+
+            initializeRadioBoxToggle("#duration-date-range", "#date-range", "Duration");
+        });
+
+
+        $(document).ready(function() {
+            initializeDataTable('#top-selling', [{
+                targets: [1],
+                orderable: false
+            }]);
+            initializeDataTable('#top-customer');
+            initializeDataTable('#product-expiration', [{
+                targets: [1],
+                orderable: false
+            }]);
+            initializeDataTable('#low-stock', [{
+                targets: [1],
+                orderable: false
+            }]);
+        });
+
+        function initializeDataTable(tableId, columnDefs) {
+            var datatable = $(tableId).DataTable({
+                sDom: '<"comn-table"rt><"comn-table-footer"p>',
+                language: {
+                    paginate: datatablePagination,
+                    zeroRecords: datatableNoRecord,
+                },
+                order: [],
+                columnDefs: columnDefs,
+                pageLength: 5
+            });
+
+            function updateTotalEntriesCount() {
+                var pageInfo = datatable.page.info();
+                $(tableId + '-datatable-entries').text(pageInfo.recordsDisplay);
+            }
+            updateTotalEntriesCount();
+
+            $(tableId + '-datatable-length').change(function() {
+                datatable.page.len($(this).val()).draw();
+                updateTotalEntriesCount();
+            });
+
+            $(tableId + '-datatable-search').on('keyup', function() {
+                datatable.search(this.value).draw();
+            });
+        }
+
+
+        $(document).ready(function() {
+            $('[id^="from-date-"]').each(function() {
+                var startDateId = $(this).attr('id');
+                var endDateId = startDateId.replace('from', 'to');
+
+                $(this).flatpickr({
+                    dateFormat: "d/m/Y",
+                    shorthandCurrentMonth: true,
+                    locale: {
+                        firstDayOfWeek: 1
+                    },
+                    disableMobile: true,
+                    position: "auto",
+                    prevArrow: '<i class="fa-solid fa-chevron-left"></i>',
+                    nextArrow: '<i class="fa-solid fa-chevron-right"></i>',
+                    plugins: [new rangePlugin({
+                        input: "#" + endDateId
+                    })]
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Returns Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="false" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-place.html">place place</a></li>
+                            <li><a href="order-my.html">my orders</a></li>
+                            <li><a href="order-generic-rx.html">Generic Rx</a></li>
+                            <li><a href="order-pad.html">order pad</a></li>
+                            <li><a href="order-previous-cart.html">previous cart</a></li>
+                            <li><a href="order-review-reminder.html">review reminder</a></li>
+                            <li><a href="order-customer.html">Customer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="recall.html"><i class="wesupply-order"></i>recall</a></li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#returns-menu" role="button" aria-expanded="true" aria-controls="returns-menu"><i class="wesupply-order"></i>returns</a>
+                        <ul class="list-unstyled submenu collapse show" id="returns-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li class="active"><a href="returns.html">Returns</a></li>
+                            <li><a href="returns-policies.html">Policies</a></li>
+                            <li><a href="returns-start-a-return.html">Start a Return</a></li>
+                            <li><a href="returns-all.html">All Returns</a></li>
+                            <li><a href="returns-recalls.html">Recalls</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#rebates-menu" role="button" aria-expanded="false" aria-controls="rebates-menu"><i class="wesupply-discount"></i>rebates</a>
+                        <ul class="list-unstyled submenu collapse" id="rebates-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="product-rebate-list.html">Product rebate list</a></li>
+                            <li><a href="rebates-group-manager-rebate.html">Group Manager rebate</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="false" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-invoice.html">Invoice report</a></li>
+                            <li><a href="report-account-statement.html">Account Statement</a></li>
+                            <li><a href="report-sales.html">Sales Report</a></li>
+                            <li><a href="report-purchase-history.html">Purchase History Report</a></li>
+                            <li><a href="report-naf-outstanding.html">NAF Outstanding</a></li>
+                            <li><a href="report-naf.html">NAF Report</a></li>
+                            <li><a href="report-tax.html">Tax Report</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="account-setting.html"><i class="wesupply-account"></i>Account Setting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="table-main">
+                <h4 class="box-title">returns</h4>
+                <div class="comn-table-header comn-table-header-2">
+                    <div class="comn-table-header-leftside">
+                        <div class="comn-table-length">
+                            <span>Showing</span>
+                            <select id="returns-datatable-length" class="comn-form-select">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                            <span>entries From <strong id="returns-datatable-entries"></strong> Entries</span>
+                        </div>
+                    </div>
+                    <div class="comn-table-header-rightside align-items-end">
+                        <div class="comn-table-header-btn-row">
+                            <button class="comn-btn comn-btn-border" id="returns-export-btn"><i class="wesupply-export"></i>export</button>
+                            <a href="returns-start-a-return.html" class="comn-btn">start a return</a>
+                        </div>
+                        <input type="text" id="returns-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                    </div>
+                </div>
+                <table class="table" id="returns">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" class="comn-form-checkbox"></th>
+                            <th>Confirmation No.</th>
+                            <th>Invoice No. </th>
+                            <th>item No.</th>
+                            <th>product description</th>
+                            <th>Return Specification </th>
+                            <th>Reason Code</th>
+                            <th>Requested Return Qty</th>
+                            <th>Confirmed return Qty</th>
+                            <th>unit price</th>
+                            <th>Extended</th>
+                            <th>Handling Fees</th>
+                            <th>tax</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>Must be sealed</td>
+                            <td>563251</td>
+                            <td>10</td>
+                            <td>4</td>
+                            <td>$16.07</td>
+                            <td>28 Mar 2024 </td>
+                            <td>$3.03</td>
+                            <td>$3.03</td>
+                            <td>$20.00</td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn shipping-btn"><i class="wesupply-print"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>Must be sealed</td>
+                            <td>563251</td>
+                            <td>10</td>
+                            <td>4</td>
+                            <td>$16.07</td>
+                            <td>28 Mar 2024 </td>
+                            <td>$3.03</td>
+                            <td>$3.03</td>
+                            <td>$20.00</td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn shipping-btn"><i class="wesupply-print"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>Must be sealed</td>
+                            <td>563251</td>
+                            <td>10</td>
+                            <td>4</td>
+                            <td>$16.07</td>
+                            <td>28 Mar 2024 </td>
+                            <td>$3.03</td>
+                            <td>$3.03</td>
+                            <td>$20.00</td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn shipping-btn"><i class="wesupply-print"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>563251</td>
+                            <td>Donec vitae mi vulputate, suscipit urna in, malesuada</td>
+                            <td>Must be sealed</td>
+                            <td>563251</td>
+                            <td>10</td>
+                            <td>4</td>
+                            <td>$16.07</td>
+                            <td>28 Mar 2024 </td>
+                            <td>$3.03</td>
+                            <td>$3.03</td>
+                            <td>$20.00</td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn shipping-btn"><i class="wesupply-print"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var returnsDatatable = $('#returns').DataTable({
+                sDom: '<"comn-table"rt><"comn-table-footer"p>',
+                language: {
+                    paginate: datatablePagination,
+                    zeroRecords: datatableNoRecord,
+                },
+                order: [],
+                columnDefs: [{
+                    targets: [0, 14],
+                    orderable: false
+                }],
+                buttons: [{
+                    extend: 'excelHtml5',
+                    title: 'Wesupply Returns List',
+                    exportOptions: {
+                        columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+                    }
+                }]
+            });
+
+            function updateTotalEntriesCount() {
+                var pageInfo = returnsDatatable.page.info();
+                $('#returns-datatable-entries').text(pageInfo.recordsDisplay);
+            }
+            updateTotalEntriesCount();
+
+            $('#returns-datatable-length').change(function() {
+                returnsDatatable.page.len($(this).val()).draw();
+                updateTotalEntriesCount();
+            });
+
+            $('#returns-datatable-search').on('keyup', function() {
+                var value = $(this).val();
+                returnsDatatable.search(value).draw();
+            });
+
+            $('#returns-export-btn').on('click', function() {
+                returnsDatatable.button('.buttons-excel').trigger();
+            });
+        });
+    </script>
+</body>
+
+</html>

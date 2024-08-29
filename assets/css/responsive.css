@@ -1,0 +1,386 @@
+@media screen and (width > 1920px) {}
+
+@media (width >=1200px) {
+    .h-xl-100 {
+        height: 100% !important;
+    }
+}
+
+@media screen and (width <=1599px) {
+    .dashboard-tables {
+        grid-template-columns: 100%;
+    }
+    .comn-table #top-customer tr td {
+        height: auto;
+    }
+    .pos-row>.table-main {
+        width: calc(100% - 455px);
+    }
+    .pos-row .table-sidebar {
+        width: 440px;
+    }
+}
+
+@media screen and (width <=1399px) {
+    .dashboard-cashflows-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .total-paid,
+    .total-unpaid {
+        grid-column: auto;
+    }
+    .table-sidebar {
+        width: 320px;
+    }
+    .order-content-row>.table-sidebar {
+        width: 350px;
+    }
+    .table-sidebar-row {
+        padding: 10px;
+    }
+    .table-sidebar-inner-box {
+        padding: 10px 5px;
+    }
+    .content-row>.table-main {
+        width: calc(100% - 335px);
+    }
+    .order-content-row>.table-main {
+        width: calc(100% - 365px);
+    }
+    .analytics-box {
+        flex-basis: 240px;
+    }
+    .comn-table-header-btn-row .comn-form-select .ts-control {
+        width: 180px;
+    }
+    .dashboard-orders-box {
+        padding-inline: 15px;
+    }
+    .order-value {
+        font-size: 28px;
+    }
+    .pos-row>.table-main {
+        width: calc(100% - 405px);
+    }
+    .pos-row .table-sidebar {
+        width: 390px;
+    }
+    .cart-image {
+        width: 50px;
+        height: 50px;
+    }
+    .cart-table .order-count-box {
+        width: 70px;
+        height: 25px;
+    }
+    .cart-table .order-count-box>* {
+        font-size: 12px;
+    }
+    .cart-table .comn-action-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+    .cart-table .table td.text-14px {
+        font-size: 13px;
+    }
+    .retailer-dash-row>* {
+        flex-basis: 240px;
+    }
+}
+
+@media screen and (width <=1199px) {
+    .dashboard-filter-row,
+    .dashboard-orders-row {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+    .dashboard-cashflows-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .admin-header-search-row {
+        width: 350px;
+    }
+    .dashboard-tables .comn-table {
+        max-height: none;
+    }
+    .product-grid-row {
+        grid-template-columns: 100%;
+    }
+    .full-grid {
+        grid-column: span 1;
+    }
+    .content-row>* {
+        position: initial;
+    }
+    .content-row>.table-main {
+        width: 100%;
+    }
+    .table-sidebar {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .order-content-row>.table-sidebar {
+        display: none;
+    }
+    .responsive-customer-manager-row {
+        display: block;
+    }
+    .add-recall-row>* {
+        flex-basis: 250px;
+    }
+    .comn-table-header-btn-row,
+    .comn-table-header-2 .comn-table-header-rightside {
+        flex-wrap: wrap;
+    }
+    .add-stock-top-row .comn-form-group.xl {
+        flex-basis: 100%;
+    }
+    .profile-row-leftside,
+    .profile-row-rightside {
+        width: 100%;
+    }
+    .am-filter-row .comn-form-group {
+        flex: 1 0 200px;
+    }
+    .pos-row .table-sidebar {
+        width: 100%;
+    }
+}
+
+@media screen and (width <=991px) {
+    .content-wrap {
+        margin-left: 0;
+    }
+    .sidebar {
+        padding: 10px;
+        min-height: auto;
+    }
+    .sidebar-close-btn,
+    .sidebar-open-btn {
+        display: inline-flex;
+    }
+    .sidebar-top-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+    .sidebar-top-row>a {
+        display: inline-block;
+        max-width: 120px;
+    }
+    .sidebar-row {
+        left: -100%;
+        transition: var(--transition);
+        top: 0;
+        z-index: 100000;
+        padding: 15px;
+        width: 300px;
+        min-height: 100vh;
+        height: 100%;
+        background-color: var(--white-color);
+    }
+    .sidebar-open {
+        left: 0;
+    }
+    .sidebar-bg {
+        overflow: hidden;
+    }
+    .sidebar-bg::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 100000;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0 0 0 / 70%);
+        overflow: hidden;
+    }
+    .sidebar-list>li.active>a:before,
+    .sidebar-list>li>a.active:before,
+    .sidebar-list>li>a[aria-expanded="true"]:before {
+        display: none;
+    }
+    .sidebar-list>li.active>a,
+    .sidebar-list>li>a.active,
+    .sidebar-list>li>a[aria-expanded="true"] {
+        border-radius: 100px;
+    }
+    .admin-header-logo {
+        width: auto;
+    }
+    .admin-header-search-row {
+        width: 250px;
+    }
+    .comn-table-header-btn-row,
+    .comn-table-header-2 .comn-table-header-rightside {
+        flex-shrink: 1;
+    }
+    .comn-table-header-2 .comn-table-header-rightside {
+        width: 100%;
+    }
+    .comn-big-modal.show .modal-dialog {
+        margin-inline: 10px;
+    }
+    .sidebar-list>li>a:after,
+    .sidebar-list>li>a[aria-expanded="true"]:after {
+        right: 15px;
+    }
+    .comn-table-header-2 .comn-table-header-rightside-2 {
+        align-items: flex-start;
+    }
+}
+
+@media screen and (width <=767px) {
+    .admin-header {
+        padding: 10px;
+    }
+    .admin-header-row {
+        padding: 10px;
+    }
+    .admin-header-logo {
+        width: 120px;
+    }
+    .admin-header-leftside {
+        gap: 12px;
+    }
+    .main-container {
+        padding: 0 10px 10px;
+    }
+    .white-comn-box-body {
+        padding: 10px;
+    }
+    .page-link,
+    .disabled>.page-link,
+    .page-link.disabled {
+        font-size: 14px;
+        width: 34px;
+        height: 34px;
+    }
+    .admin-header-search-row {
+        width: 180px;
+    }
+    .comn-btn {
+        min-width: 100px;
+        padding-block: 10px;
+    }
+    .comn-btn-row {
+        margin-top: 15px;
+    }
+    .report-invoice-box-bottom-box {
+        flex-basis: 100%;
+    }
+    .report-invoice-box-top-leftside .comn-form-group {
+        flex-basis: 220px;
+    }
+}
+
+@media screen and (width <=575px) {
+    .dashboard-cashflows-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .admin-header {
+        position: initial;
+    }
+    .dashboard-filter-row,
+    .dashboard-orders-row {
+        grid-template-columns: 100%;
+    }
+    .dashboard-orders-box {
+        padding: 10px 15px;
+    }
+    .order-label {
+        font-size: 14px;
+    }
+    .order-value {
+        font-size: 24px;
+        line-height: 40px;
+    }
+    div.dt-container div.dt-paging ul.pagination {
+        gap: 5px;
+    }
+    .comn-date-range-row {
+        grid-template-columns: 100%;
+    }
+    .product-grid-row {
+        padding-inline: 0px;
+    }
+    .tags-row {
+        grid-template-columns: auto;
+    }
+    .comn-modal .modal-header,
+    .comn-modal .modal-body,
+    .comn-modal .modal-footer {
+        padding-inline: 20px;
+    }
+    .comn-modal .modal-footer {
+        padding-block: 20px;
+    }
+    .comn-border-box-2 {
+        padding: 20px 15px;
+    }
+    .analytics-box.small-box,
+    .analytics-box {
+        flex-basis: 100%;
+    }
+    .order-list-card-rightside {
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .auto-generate-box {
+        gap: 20px;
+        padding: 20px;
+    }
+    .auto-generate-box>* {
+        flex-basis: 100%;
+    }
+    .auto-generate-border {
+        border-left: none;
+        border-top: 1px solid var(--black30-color);
+    }
+    .profile-image-box {
+        width: 80px;
+        height: 80px;
+    }
+    .profile-image-box>label {
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+    }
+    .profile-row-leftside>aside {
+        font-size: 18px;
+    }
+    .cart-modal-row .pro-category-image {
+        order: -1;
+    }
+    .cart-modal-row .btn-close {
+        order: -1;
+        margin-left: auto;
+    }
+    .product-search-row .comn-country-input {
+        flex-grow: 1;
+    }
+    .payment-method-group label img {
+        width: 24px;
+        height: 24px;
+    }
+    .retaileer-header>.comn-form-group {
+        flex-basis: 100%;
+    }
+    .report-invoice-box-top-leftside .comn-form-group {
+        flex-basis: 100%;
+    }
+    .review-order-list li>aside {
+        gap: 20px;
+    }
+    .review-order-box {
+        padding: 10px;
+    }
+    .review-order-list li>aside,
+    .review-order-list li>p {
+        font-size: 14px;
+    }
+}

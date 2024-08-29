@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Order List Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="true" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse show" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li class="active"><a href="order-list.html">order list</a></li>
+                            <li><a href="order-add-new.html">add new order</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="commission.html"><i class="wesupply-discount"></i>commission</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#customers-menu" role="button" aria-expanded="false" aria-controls="customers-menu"><i class="wesupply-customers"></i>Customers</a>
+                        <ul class="list-unstyled submenu collapse" id="customers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="customer-list.html">custom list</a></li>
+                            <li><a href="customer-add.html">add custom</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="false" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-stock-by-category.html">stock by category</a></li>
+                            <li><a href="report-low-stock.html">low stock</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="table-main">
+                <h4 class="box-title">order List</h4>
+                <div class="comn-table-header comn-table-header-2">
+                    <div class="comn-table-header-leftside">
+                        <div class="comn-table-length">
+                            <span>Showing</span>
+                            <select id="order-list-datatable-length" class="comn-form-select">
+                               <option value="10">10</option>
+                               <option value="25">25</option>
+                               <option value="50">50</option>
+                               <option value="100">100</option>
+                           </select>
+                            <span>entries From <strong id="order-list-datatable-entries"></strong> Entries</span>
+                        </div>
+                    </div>
+                    <div class="comn-table-header-rightside">
+                        <div class="comn-table-header-btn-row">
+                            <a href="order-add-new.html" class="comn-btn"><i class="fa-solid fa-plus"></i> add new</a>
+                        </div>
+                        <input type="text" id="order-list-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                    </div>
+                </div>
+                <table class="table" id="order-list">
+                    <thead>
+                        <tr>
+                            <th>item</th>
+                            <th>order type</th>
+                            <th>date</th>
+                            <th>Customer</th>
+                            <th>Min/max</th>
+                            <th>pack size</th>
+                            <th>order value</th>
+                            <th>processed value</th>
+                            <th>ordered by</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>563251</td>
+                            <td>main</td>
+                            <td>28 Feb 2024</td>
+                            <td>Daniel Hamilton (drug pharmacy)</td>
+                            <td>1/1</td>
+                            <td>1/EA</td>
+                            <td>$54</td>
+                            <td>$54</td>
+                            <td>Acc. manager</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn edit-btn"><i class="wesupply-edit"></i></button>
+                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>563251</td>
+                            <td>main</td>
+                            <td>28 Feb 2024</td>
+                            <td>Daniel Hamilton (drug pharmacy)</td>
+                            <td>1/1</td>
+                            <td>1/EA</td>
+                            <td>$54</td>
+                            <td>$54</td>
+                            <td>Acc. manager</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn edit-btn"><i class="wesupply-edit"></i></button>
+                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>563251</td>
+                            <td>main</td>
+                            <td>28 Feb 2024</td>
+                            <td>Daniel Hamilton (drug pharmacy)</td>
+                            <td>1/1</td>
+                            <td>1/EA</td>
+                            <td>$54</td>
+                            <td>$54</td>
+                            <td>Acc. manager</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn edit-btn"><i class="wesupply-edit"></i></button>
+                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>563251</td>
+                            <td>main</td>
+                            <td>28 Feb 2024</td>
+                            <td>Daniel Hamilton (drug pharmacy)</td>
+                            <td>1/1</td>
+                            <td>1/EA</td>
+                            <td>$54</td>
+                            <td>$54</td>
+                            <td>Acc. manager</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn edit-btn"><i class="wesupply-edit"></i></button>
+                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>563251</td>
+                            <td>main</td>
+                            <td>28 Feb 2024</td>
+                            <td>Daniel Hamilton (drug pharmacy)</td>
+                            <td>1/1</td>
+                            <td>1/EA</td>
+                            <td>$54</td>
+                            <td>$54</td>
+                            <td>Acc. manager</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn edit-btn"><i class="wesupply-edit"></i></button>
+                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var orderListDatatable = $('#order-list').DataTable({
+                sDom: '<"comn-table"rt><"comn-table-footer"p>',
+                language: {
+                    paginate: datatablePagination,
+                    zeroRecords: datatableNoRecord,
+                },
+                order: [],
+                columnDefs: [{
+                    targets: [10],
+                    orderable: false
+                }],
+            });
+
+            function updateTotalEntriesCount() {
+                var pageInfo = orderListDatatable.page.info();
+                $('#order-list-datatable-entries').text(pageInfo.recordsDisplay);
+            }
+            updateTotalEntriesCount();
+
+            $('#order-list-datatable-length').change(function() {
+                orderListDatatable.page.len($(this).val()).draw();
+                updateTotalEntriesCount();
+            });
+
+            $('#order-list-datatable-search').on('keyup', function() {
+                var value = $(this).val();
+                orderListDatatable.search(value).draw();
+            });
+        });
+    </script>
+</body>
+
+</html>

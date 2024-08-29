@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Product Varients Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li><a href="settings.html"><i class="wesupply-setting"></i>Settings</a></li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#products-menu" role="button" aria-expanded="true" aria-controls="products-menu"><i class="wesupply-product"></i>Products</a>
+                        <ul class="list-unstyled submenu collapse show" id="products-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="product-list.html">Product List</a></li>
+                            <li class="active"><a href="product-add.html">Add Product</a></li>
+                            <li><a href="product-types.html">product types</a></li>
+                            <li><a href="product-category.html">Category</a></li>
+                            <li><a href="product-tags.html">Tags</a></li>
+                            <li><a href="product-attributes.html">Attributes</a></li>
+                            <li><a href="product-return-criteria.html">Return Criteria</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#inventory-mng-menu" role="button" aria-expanded="false" aria-controls="inventory-mng-menu"><i class="wesupply-product"></i>inventory mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="inventory-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="inventory-stock-adjustment-list.html">stock adjustment list</a></li>
+                            <li><a href="inventory-add-stock-adjustment.html">Add stock adjustment</a></li>
+                            <li><a href="inventory.html">inventory</a></li>
+                            <li><a href="inventory-stock-mng-reasons.html">Stock Mng. Reasons</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#users-menu" role="button" aria-expanded="false" aria-controls="users-menu"><i class="wesupply-account"></i>Users</a>
+                        <ul class="list-unstyled submenu collapse" id="users-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="user-list.html">User List</a></li>
+                            <li><a href="user-roles-permission.html">Roles &amp; permissions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="false" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-list.html">order list</a></li>
+                            <li><a href="order-add-new.html">add new order</a></li>
+                            <li><a href="order-retailers.html">retailer orders</a></li>
+                            <li><a href="order-consumer.html">consumer orders</a></li>
+                            <li><a href="order-recall.html">recall Item</a></li>
+                            <li><a href="order-accept-recalls.html">Accept Recalls</a></li>
+                            <li><a href="order-returns.html">returns</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#credits-menu" role="button" aria-expanded="false" aria-controls="credits-menu"><i class="wesupply-discount"></i>Credits</a>
+                        <ul class="list-unstyled submenu collapse" id="credits-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="credit-notes.html">Credit Notes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#suppliers-menu" role="button" aria-expanded="false" aria-controls="suppliers-menu"><i class="wesupply-suppliers"></i>Suppliers</a>
+                        <ul class="list-unstyled submenu collapse" id="suppliers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="suppliers-list.html">Suppliers list</a></li>
+                            <li><a href="suppliers-add-new.html">Add new supplier</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#customers-menu" role="button" aria-expanded="false" aria-controls="customers-menu"><i class="wesupply-customers"></i>Customers</a>
+                        <ul class="list-unstyled submenu collapse" id="customers-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="customer-retailer-list.html">retailer list</a></li>
+                            <li><a href="customer-add-retailer.html">add retailer</a></li>
+                            <li><a href="customer-consumer-list.html">consumer list</a></li>
+                            <li><a href="customer-add-consumer.html">add consumer</a></li>
+                            <li><a href="customer-groups.html">Groups</a></li>
+                            <li><a href="customer-group-manager.html">Group manager</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#Payments-rebates-menu" role="button" aria-expanded="false" aria-controls="Payments-rebates-menu"><i class="wesupply-discount"></i>Payments &#38; rebates</a>
+                        <ul class="list-unstyled submenu collapse" id="Payments-rebates-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="payments-rebates-product-rebate-list.html">Product rebate list</a></li>
+                            <li><a href="Payments-rebates-group-manager-rebate.html">Group Manager rebate</a></li>
+                            <li><a href="Payments-rebates-supplier-payment.html">Supplier payment</a></li>
+                            <li><a href="Payments-rebates-supplier-stock-refund.html">Supplier stock refund</a></li>
+                            <li><a href="Payments-rebates-mgr-commission.html">Mgr. commission</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="email-templates.html"><i class="wesupply-email-templates"></i>Email Templates</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#account-menu" role="button" aria-expanded="false" aria-controls="account-menu"><i class="wesupply-account-manager"></i>Account Manager</a>
+                        <ul class="list-unstyled submenu collapse" id="account-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="account-manager-all.html">all acc. managers</a></li>
+                            <li><a href="account-manager-add-new.html">add new</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="taxes.html"><i class="wesupply-discount"></i>taxes</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#shipping-mng-menu" role="button" aria-expanded="false" aria-controls="shipping-mng-menu"><i class="wesupply-order"></i>shipping Mng.</a>
+                        <ul class="list-unstyled submenu collapse" id="shipping-mng-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="shipping-mng-shipment-rate.html">Shipment rate</a></li>
+                            <li><a href="shipping-mng-manage-city.html">Manage city</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="false" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-supplier-stock.html">Supplier stock</a></li>
+                            <li><a href="report-supplier-return-stock.html">Supplier return stock</a></li>
+                            <li><a href="report-group-retailer-rebate.html">group retailer rebate</a></li>
+                            <li><a href="report-retailer-rebate.html">retailer rebate</a></li>
+                            <li><a href="report-product-rebate.html">product rebate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="discount.html"><i class="wesupply-discount"></i>Discount</a></li>
+                    <li><a href="cms-pages.html"><i class="wesupply-pages"></i>cms pages</a></li>
+                    <li><a href="blog-pages.html"><i class="wesupply-pages"></i>Blog page</a></li>
+                    <li><a href="testimonial.html"><i class="wesupply-pages"></i>Testimonial</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="table-main">
+                <h4 class="box-title"><a href="product-add.html"><i class="fa-solid fa-chevron-left"></i></a> add product variant</h4>
+                <div class="comn-table-header comn-table-header-2">
+                    <div class="comn-table-header-leftside">
+                        <div class="attribute-varient-row">
+                            <aside>this product has <span>18 Variants</span></aside>
+                        </div>
+                    </div>
+                    <div class="comn-table-header-rightside">
+                        <input type="text" id="product-varient-datatable-search" class="comn-datatable-search comn-form-control" placeholder="Search here...">
+                    </div>
+                </div>
+                <table class="table comn-inner-table comn-inner-table-white-border" id="product-varient">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th><input type="checkbox" class="comn-form-checkbox"></th>
+                            <th>image</th>
+                            <th>Variant name</th>
+                            <th>sku</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-row-expand"><i class="fa-solid fa-chevron-right"></i></td>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                            <td>red/small</td>
+                            <td>106369</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn edit-btn"><i class="wesupply-edit"></i></button>
+                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-row-expand"><i class="fa-solid fa-chevron-right"></i></td>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                            <td>red/small</td>
+                            <td>106369</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn edit-btn"><i class="wesupply-edit"></i></button>
+                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-row-expand"><i class="fa-solid fa-chevron-right"></i></td>
+                            <td><input type="checkbox" class="comn-form-checkbox"></td>
+                            <td><img src="../assets/images/table-thumbs.jpg" class="table-thumbs" alt=""></td>
+                            <td>red/small</td>
+                            <td>106369</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="comn-table-action-row">
+                                    <button class="comn-action-btn edit-btn"><i class="wesupply-edit"></i></button>
+                                    <button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            function format(d) {
+                var additionalTable = `
+                     <div class="comn-tabs">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="productDetail-tab" data-bs-toggle="tab" data-bs-target="#productDetail-tab-pane" type="button" role="tab" aria-controls="productDetail-tab-pane" aria-selected="true">product detail</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pricing-tab" data-bs-toggle="tab" data-bs-target="#pricing-tab-pane" type="button" role="tab" aria-controls="pricing-tab-pane" aria-selected="false">pricing</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="addStock-tab" data-bs-toggle="tab" data-bs-target="#addStock-tab-pane" type="button" role="tab" aria-controls="addStock-tab-pane" aria-selected="false">add stock</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="productDetail-tab-pane" role="tabpanel" aria-labelledby="productDetail-tab" tabindex="0">
+                                <div class="product-grid-row">
+                                    <div class="product-grid-card">
+                                        <div class="comn-image-card">
+                                            <div class="comn-image-card-top">
+                                                <div class="comn-image-card-top-leftside">
+                                                    <label class="comn-form-label">product image</label>
+                                                    <div class="dropzone image-drop-card" id="image-drop-card-5"></div>
+                                                </div>
+                                                <div class="comn-image-card-top-rightside">
+                                                    <div class="image-perview-card">
+                                                        <img src="../assets/images/no-image.png" alt="" id="previewImage-5">
+                                                        <input type="hidden" id="uploadedImage-5">
+                                                    </div>
+                                                    <button class="comn-btn" id="dropzone-btn-5">select image</button>
+                                                </div>
+                                            </div>
+                                            <div class="comn-image-card-bottom">
+                                                <aside>
+                                                    <p>accepted format :<span>JPG, PNG</span></p>
+                                                    <p>Max size :<span>100kb</span></p>
+                                                </aside>
+                                                <aside>
+                                                    <p>Resolution :<span>500 x 500</span></p>
+                                                    <p>ratio :<span>1:1</span></p>
+                                                </aside>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xl-12">
+                                                <div class="comn-form-group">
+                                                    <label class="comn-form-label">Barcode/SKU</label>
+                                                    <div class="comn-country-input comn-barcode-input">
+                                                        <p class="country-code-text"><i class="wesupply-barcode"></i></p>
+                                                        <input type="text" class="comn-form-control" placeholder="Barcode/SKU">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xl-12">
+                                                <div class="comn-form-group mb-0">
+                                                    <label class="comn-form-label">pack size</label>
+                                                    <input type="text" class="comn-form-control" placeholder="Small">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-grid-card">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xl-12">
+                                                <div class="comn-form-group">
+                                                    <label class="comn-form-label">SKU</label>
+                                                    <input type="text" class="comn-form-control" placeholder="106369">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xl-12">
+                                                <div class="comn-form-group">
+                                                    <label class="comn-form-label">Manufacture's Code</label>
+                                                    <input type="text" class="comn-form-control" placeholder="Manufacture's Code">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xl-12">
+                                                <div class="comn-form-group">
+                                                    <label class="comn-form-label">DIN Number</label>
+                                                    <input type="text" class="comn-form-control" placeholder="DIN Number">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="comn-form-group">
+                                                    <label class="comn-form-label">Length (mm)</label>
+                                                    <input type="text" class="comn-form-control" placeholder="Length (mm)">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="comn-form-group">
+                                                    <label class="comn-form-label">Height (M)</label>
+                                                    <input type="text" class="comn-form-control" placeholder="Height (M)">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="comn-form-group mb-sm-0">
+                                                    <label class="comn-form-label">Width (cm)</label>
+                                                    <input type="text" class="comn-form-control" placeholder="Width (cm)">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="comn-form-group mb-0">
+                                                    <label class="comn-form-label">Weight (kg)</label>
+                                                    <input type="text" class="comn-form-control" placeholder="Weight (kg)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pricing-tab-pane" role="tabpanel" aria-labelledby="pricing-tab" tabindex="0">
+                                <div class="product-grid-row">
+                                    <div class="product-grid-card">
+                                        <label class="comn-form-label">Consumer price</label>
+                                        <div class="comn-border-box comn-border-box-2">
+                                            <div class="comn-form-switch-row comn-border-form-switch-row">
+                                                <div class="form-check comn-form-check">
+                                                    <label class="form-check-label" for="applyMargin">Apply Margin</label>
+                                                    <input class="form-check-input" type="radio" name="consumerPrice" id="applyMargin">
+                                                </div>
+                                                <div class="form-check comn-form-check">
+                                                    <label class="form-check-label" for="setManually">Set Manually</label>
+                                                    <input class="form-check-input" type="radio" name="consumerPrice" id="setManually" checked>
+                                                </div>
+                                                <div class="form-check form-switch comn-form-check">
+                                                    <label class="form-check-label" for="taxable">taxable :</label>
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="taxable">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group">
+                                                        <label class="comn-form-label">Regular Price</label>
+                                                        <input type="text" class="comn-form-control" placeholder="Regular Price">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group">
+                                                        <label class="comn-form-label">Sale/Clearance Price</label>
+                                                        <input type="text" class="comn-form-control" placeholder="Sale/Clearance Price">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group mb-sm-0">
+                                                        <label class="comn-form-label">Handling fees</label>
+                                                        <input type="text" class="comn-form-control" placeholder="Handling fees">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group mb-0">
+                                                        <label class="comn-form-label">Product Average Cost</label>
+                                                        <input type="text" class="comn-form-control" value="Product Average Cost" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="comn-form-group full-grid mb-0 mt-3" id="selectMarginTypeBox" style="display: none;">
+                                                <label class="comn-form-label">Margin Type</label>
+                                                <select class="comn-form-select">
+                                                    <option value="">Margin Type</option>
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-grid-card">
+                                        <label class="comn-form-label">Retailer price</label>
+                                        <div class="comn-border-box comn-border-box-2">
+                                            <div class="comn-form-switch-row comn-border-form-switch-row">
+                                                <div class="form-check comn-form-check">
+                                                    <label class="form-check-label" for="applyMargin2">Apply Margin</label>
+                                                    <input class="form-check-input" type="radio" name="retailerPrice" id="applyMargin2">
+                                                </div>
+                                                <div class="form-check comn-form-check">
+                                                    <label class="form-check-label" for="setManually2">Set Manually</label>
+                                                    <input class="form-check-input" type="radio" name="retailerPrice" id="setManually2" checked>
+                                                </div>
+                                                <div class="form-check form-switch comn-form-check">
+                                                    <label class="form-check-label" for="taxable2">taxable :</label>
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="taxable2">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group">
+                                                        <label class="comn-form-label">Regular Price</label>
+                                                        <input type="text" class="comn-form-control" placeholder="Regular Price">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group">
+                                                        <label class="comn-form-label">Sale/Clearance Price</label>
+                                                        <input type="text" class="comn-form-control" placeholder="Sale/Clearance Price">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group mb-sm-0">
+                                                        <label class="comn-form-label">Handling fees</label>
+                                                        <input type="text" class="comn-form-control" placeholder="Handling fees">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="comn-form-group mb-0">
+                                                        <label class="comn-form-label">Product Average Cost</label>
+                                                        <input type="text" class="comn-form-control" value="Product Average Cost" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="comn-form-group full-grid mb-0 mt-3" id="selectMarginTypeBox2" style="display: none;">
+                                                <label class="comn-form-label">Margin Type</label>
+                                                <select class="comn-form-select">
+                                                    <option value="">Margin Type</option>
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comn-small-title">
+                                    <div class="comn-small-title-leftside">
+                                        <span>retailer volume discount</span>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="retailerSwitch">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-grid-row product-retailer-volume" style="display: none;">
+                                    <div class="product-grid-card full-grid">
+                                        <div class="comn-table product-table">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>from qty</th>
+                                                        <th>to qty</th>
+                                                        <th>flat / percentage on discount</th>
+                                                        <th>clearance</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="text" class="comn-form-control" placeholder="from qty"></td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="to qty"></td>
+                                                        <td>
+                                                            <select class="comn-form-select" outside>
+                                                                <option value="">flat / percentage on discount</option>
+                                                                <option>Option 1</option>
+                                                                <option>Option 2</option>
+                                                                <option>Option 3</option>
+                                                            </select>
+                                                        </td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="24"></td>
+                                                        <td><button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="text" class="comn-form-control" placeholder="from qty"></td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="to qty"></td>
+                                                        <td>
+                                                            <select class="comn-form-select" outside>
+                                                                <option value="">flat / percentage on discount</option>
+                                                                <option>Option 1</option>
+                                                                <option>Option 2</option>
+                                                                <option>Option 3</option>
+                                                            </select>
+                                                        </td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="24"></td>
+                                                        <td><button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="volume-btn-row">
+                                            <div class="gap-10">
+                                                <button class="comn-btn comn-btn-secondary add-row-btn"><i class="fa-solid fa-plus min-w-auto"></i>Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comn-small-title mt-3">
+                                    <div class="comn-small-title-leftside">
+                                        <span>consumer volume discount</span>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="consumerSwitch">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-grid-row product-consumer-volume" style="display: none;">
+                                    <div class="product-grid-card full-grid">
+                                        <div class="comn-table product-table">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>from qty</th>
+                                                        <th>to qty</th>
+                                                        <th>flat / percentage on discount</th>
+                                                        <th>clearance</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="text" class="comn-form-control" placeholder="from qty"></td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="to qty"></td>
+                                                        <td>
+                                                            <select class="comn-form-select" outside>
+                                                                <option value="">flat / percentage on discount</option>
+                                                                <option>Option 1</option>
+                                                                <option>Option 2</option>
+                                                                <option>Option 3</option>
+                                                            </select>
+                                                        </td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="24"></td>
+                                                        <td><button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="text" class="comn-form-control" placeholder="from qty"></td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="to qty"></td>
+                                                        <td>
+                                                            <select class="comn-form-select" outside>
+                                                                <option value="">flat / percentage on discount</option>
+                                                                <option>Option 1</option>
+                                                                <option>Option 2</option>
+                                                                <option>Option 3</option>
+                                                            </select>
+                                                        </td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="24"></td>
+                                                        <td><button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="volume-btn-row">
+                                            <div class="gap-10">
+                                                <button class="comn-btn comn-btn-secondary add-row-btn"><i class="fa-solid fa-plus min-w-auto"></i>Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="addStock-tab-pane" role="tabpanel" aria-labelledby="addStock-tab" tabindex="0">
+                                <div class="product-grid-row product-stock-volume">
+                                    <div class="product-grid-card full-grid">
+                                        <div class="comn-table product-table">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Purchase Date</th>
+                                                        <th>Expiry date</th>
+                                                        <th>stock no.</th>
+                                                        <th>supplier</th>
+                                                        <th>purchased quantity</th>
+                                                        <th>in stock quantity</th>
+                                                        <th>cost</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Mar 11, 2024</td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="Feb 17 2025"></td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="stock no."></td>
+                                                        <td>
+                                                            <select class="comn-form-select" outside>
+                                                                <option value="">Select supplier</option>
+                                                                <option>Option 1</option>
+                                                                <option>Option 2</option>
+                                                                <option>Option 3</option>
+                                                            </select>
+                                                        </td>
+                                                        <td><input type="text" class="comn-form-control" value="3"></td>
+                                                        <td><input type="text" class="comn-form-control" value="3"></td>
+                                                        <td><input type="text" class="comn-form-control" value="24"></td>
+                                                        <td><button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feb 17, 2024</td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="Feb 17 2025"></td>
+                                                        <td><input type="text" class="comn-form-control" placeholder="stock no."></td>
+                                                        <td>
+                                                            <select class="comn-form-select" outside>
+                                                                <option value="">Select supplier</option>
+                                                                <option>Option 1</option>
+                                                                <option>Option 2</option>
+                                                                <option>Option 3</option>
+                                                            </select>
+                                                        </td>
+                                                        <td><input type="text" class="comn-form-control" value="1"></td>
+                                                        <td><input type="text" class="comn-form-control" value="1"></td>
+                                                        <td><input type="text" class="comn-form-control" value="24"></td>
+                                                        <td><button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="volume-btn-row">
+                                            <div class="gap-10">
+                                                <button class="comn-btn comn-btn-secondary add-row-btn"><i class="fa-solid fa-plus min-w-auto"></i>Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-start mt-2"><button class="comn-btn">save</button></div>
+                    `;
+                return additionalTable;
+            }
+
+
+            // Image Dropzone code
+            function initializeDropzone(dropzoneId, previewImageId, uploadedImageId, dropzoneBtnId, multipleImage) {
+                var myDropzoneElement = document.getElementById(dropzoneId);
+
+                if (myDropzoneElement) {
+                    var myDropzone = new Dropzone(myDropzoneElement, {
+                        url: "website URL",
+                        paramName: "file",
+                        maxFilesize: 2,
+                        acceptedFiles: ".jpg, .jpeg, .png, .svg",
+                        maxFiles: multipleImage ? 2 : 1,
+                        clickable: "#" + dropzoneId + ", #" + dropzoneBtnId,
+                        dictDefaultMessage: "<span><i class='fa-solid fa-plus'></i> Drag a file here or browse a file to upload</span>",
+                        init: function() {
+                            if (!multipleImage) {
+                                this.on("addedfile", function(file) {
+                                    if (this.files.length > 1) {
+                                        this.removeFile(this.files[0]);
+                                    }
+                                });
+                            }
+
+                            var _this = this;
+                            var isFirstImageUploaded = false;
+                            var numUploadedImages = 0;
+
+                            function updateHiddenInput(dataURL) {
+                                var hiddenInput = document.getElementById(uploadedImageId);
+                                hiddenInput.value = dataURL;
+                            }
+
+                            function updatePreviewImage() {
+                                var previewImage = document.getElementById(previewImageId);
+                                if (_this.files && _this.files.length > 0) {
+                                    if (_this.files[0].dataURL) {
+                                        previewImage.src = _this.files[0].dataURL;
+                                    } else {
+                                        previewImage.src = URL.createObjectURL(_this.files[0]);
+                                    }
+                                } else {
+                                    previewImage.src = '../assets/images/no-image.png';
+                                    updateHiddenInput('');
+                                }
+                            }
+
+                            this.on("addedfile", function(file) {
+                                var removeButton = Dropzone.createElement("<a class='dz-remove' href='javascript:;'><i class='fa-solid fa-xmark'></i></a>");
+                                removeButton.addEventListener("click", function(e) {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    _this.removeFile(file);
+                                    numUploadedImages--;
+                                    updatePreviewImage();
+                                });
+                                file.previewElement.appendChild(removeButton);
+                                numUploadedImages++;
+                                updatePreviewImage();
+                            });
+
+                            this.on("success", function(file, response) {
+                                if (!isFirstImageUploaded) {
+                                    isFirstImageUploaded = true;
+                                    updatePreviewImage();
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            // Apply Margin Code
+            function initializeRadioBoxToggle(selectCustomerBoxId, selectCustomerRadioId, otherRadioGroupName) {
+                const $selectCustomerBox = $(selectCustomerBoxId);
+                const $selectCustomerRadio = $(selectCustomerRadioId);
+                const $otherRadios = $(`input[name="${otherRadioGroupName}"]:not(${selectCustomerRadioId})`);
+
+                function toggleSelectCustomerBox() {
+                    $selectCustomerBox.toggle($selectCustomerRadio.prop("checked"));
+                }
+
+                toggleSelectCustomerBox();
+
+                $selectCustomerRadio.change(toggleSelectCustomerBox);
+
+                $otherRadios.change(function() {
+                    $selectCustomerBox.hide();
+                });
+            }
+
+
+            // Switch Open Close Code
+            function initializeSwitch(productSwitchId, productRowClass) {
+                const productSwitch = document.getElementById(productSwitchId);
+                const productGridRow = document.querySelector('.' + productRowClass);
+
+                productSwitch.addEventListener('change', function() {
+                    productGridRow.style.display = productSwitch.checked ? 'grid' : 'none';
+                });
+            }
+
+            // Volume Discount Code
+            function initializeTomSelect($table) {
+                $table.find('.comn-form-select').each(function() {
+                    var settings = {
+                        dropdownParent: 'body'
+                    };
+                    if ($(this).attr('multiple')) {
+                        settings.plugins = ['remove_button'];
+                    }
+                    new TomSelect(this, settings);
+                });
+            }
+
+            function addRow($table) {
+                var newRow = `
+            <tr>
+                <td><input type="text" class="comn-form-control" placeholder="from qty"></td>
+                <td><input type="text" class="comn-form-control" placeholder="to qty"></td>
+                <td>
+                    <select class="comn-form-select" outside>
+                        <option value="">flat / percentage on discount</option>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </td>
+                <td><input type="text" class="comn-form-control" placeholder="24"></td>
+                <td><button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button></td>
+            </tr>
+        `;
+                $table.find('tbody').append(newRow);
+                $table.find('tbody tr:last-child .comn-form-select').each(function() {
+                    var settings = {};
+                    settings.dropdownParent = 'body';
+                    if ($(this).attr('multiple')) {
+                        settings.plugins = ['remove_button'];
+                    }
+                    new TomSelect(this, settings);
+                });
+            }
+
+            function addStockRow($table) {
+                var newStockRow = `
+            <tr>
+                <td>Feb 17, 2024</td>
+                <td><input type="text" class="comn-form-control" placeholder="Feb 17 2025"></td>
+                <td><input type="text" class="comn-form-control" placeholder="stock no."></td>
+                <td>
+                    <select class="comn-form-select" outside>
+                        <option value="">Select supplier</option>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </td>
+                <td><input type="text" class="comn-form-control" value="1"></td>
+                <td><input type="text" class="comn-form-control" value="1"></td>
+                <td><input type="text" class="comn-form-control" value="24"></td>
+                <td><button class="comn-action-btn delete-btn"><i class="wesupply-delete"></i></button></td>
+            </tr>
+        `;
+                $table.find('tbody').append(newStockRow);
+                $table.find('tbody tr:last-child .comn-form-select').each(function() {
+                    var settings = {};
+                    settings.dropdownParent = 'body';
+                    if ($(this).attr('multiple')) {
+                        settings.plugins = ['remove_button'];
+                    }
+                    new TomSelect(this, settings);
+                });
+            }
+            // Your existing DataTable initialization
+            var productVarientDatatable = $('#product-varient').DataTable({
+                sDom: '<"comn-table"rt><"comn-table-footer"p>',
+                language: {
+                    paginate: datatablePagination,
+                    zeroRecords: datatableNoRecord,
+                },
+                order: [],
+                columnDefs: [{
+                    targets: [0, 1, 2],
+                    orderable: false
+                }]
+            });
+
+            $('#product-varient-datatable-search').on('keyup', function() {
+                var value = $(this).val();
+                productVarientDatatable.search(value).draw();
+            });
+
+            $('#product-varient tbody').on('click', '.table-row-expand', function() {
+                // Your existing code for expanding rows
+                var tr = $(this).closest('tr');
+                var row = productVarientDatatable.row(tr);
+
+                if (row.child.isShown()) {
+                    row.child.hide();
+                    tr.removeClass('open');
+                    $(this).removeClass('expanded');
+                } else {
+                    row.child(format(row.data())).show();
+                    tr.addClass('open');
+                    $(this).addClass('expanded');
+                }
+
+                // Call the functions here
+                initializeDropzone("image-drop-card-5", "previewImage-5", "uploadedImage-5", "dropzone-btn-5", true);
+                initializeRadioBoxToggle("#selectMarginTypeBox", "#applyMargin", "consumerPrice");
+                initializeRadioBoxToggle("#selectMarginTypeBox2", "#applyMargin2", "retailerPrice");
+                initializeSwitch('retailerSwitch', 'product-retailer-volume');
+                initializeSwitch('consumerSwitch', 'product-consumer-volume');
+                initializeTomSelect($('#product-varient'));
+
+                $('.product-retailer-volume').on('click', '.add-row-btn', function() {
+                    addRow($(this).closest('.product-retailer-volume').find('.product-table'));
+                });
+
+                $('.product-consumer-volume').on('click', '.add-row-btn', function() {
+                    addRow($(this).closest('.product-consumer-volume').find('.product-table'));
+                });
+
+                $('.product-stock-volume').on('click', '.add-row-btn', function() {
+                    addStockRow($(this).closest('.product-stock-volume').find('.product-table'));
+                });
+
+                $('.product-table').on('click', '.delete-btn', function() {
+                    $(this).closest('tr').remove();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

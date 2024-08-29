@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Account Statement Wesupply</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/wesupply-icon.css">
+    <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/tom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/css/tagify.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-row">
+            <div class="admin-header-leftside">
+                <div class="admin-header-logo">
+                    <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                </div>
+                <div class="admin-header-search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick Search...">
+                </div>
+            </div>
+            <div class="admin-header-rightside">
+                <div class="comn-notification-card">
+                    <img src="../assets/images/notification-icon.svg" alt="">
+                    <span>1</span>
+                </div>
+                <div class="dropdown profile-dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/profile-image.jpg" alt=""><span></span></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="profile-username">Hey, <strong>Rock smith</strong></li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="wesupply-account"></i>Account</a></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="wesupply-sign-out"></i>sign out</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-open-btn"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar-row">
+            <div class="sidebar-top-row">
+                <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                <div class="sidebar-close-btn"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="sidebar">
+                <ul class="list-unstyled sidebar-list mb-0" id="sidebar-collapse-main">
+                    <li><a href="index.html"><i class="wesupply-dashboard"></i>Dashboard</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#orders-menu" role="button" aria-expanded="false" aria-controls="orders-menu"><i class="wesupply-order"></i>Orders</a>
+                        <ul class="list-unstyled submenu collapse" id="orders-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="order-place.html">place place</a></li>
+                            <li><a href="order-my.html">my orders</a></li>
+                            <li><a href="order-generic-rx.html">Generic Rx</a></li>
+                            <li><a href="order-pad.html">order pad</a></li>
+                            <li><a href="order-previous-cart.html">previous cart</a></li>
+                            <li><a href="order-review-reminder.html">review reminder</a></li>
+                            <li><a href="order-customer.html">Customer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="recall.html"><i class="wesupply-order"></i>recall</a></li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#returns-menu" role="button" aria-expanded="false" aria-controls="returns-menu"><i class="wesupply-order"></i>returns</a>
+                        <ul class="list-unstyled submenu collapse" id="returns-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="returns.html">Returns</a></li>
+                            <li><a href="returns-policies.html">Policies</a></li>
+                            <li><a href="returns-start-a-return.html">Start a Return</a></li>
+                            <li><a href="returns-all.html">All Returns</a></li>
+                            <li><a href="returns-recalls.html">Recalls</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="collapse" href="#rebates-menu" role="button" aria-expanded="false" aria-controls="rebates-menu"><i class="wesupply-discount"></i>rebates</a>
+                        <ul class="list-unstyled submenu collapse" id="rebates-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="product-rebate-list.html">Product rebate list</a></li>
+                            <li><a href="rebates-group-manager-rebate.html">Group Manager rebate</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a data-bs-toggle="collapse" href="#reports-menu" role="button" aria-expanded="true" aria-controls="reports-menu"><i class="wesupply-reports"></i>Report</a>
+                        <ul class="list-unstyled submenu collapse show" id="reports-menu" data-bs-parent="#sidebar-collapse-main">
+                            <li><a href="report-invoice.html">Invoice report</a></li>
+                            <li class="active"><a href="report-account-statement.html">Account Statement</a></li>
+                            <li><a href="report-sales.html">Sales Report</a></li>
+                            <li><a href="report-purchase-history.html">Purchase History Report</a></li>
+                            <li><a href="report-naf-outstanding.html">NAF Outstanding</a></li>
+                            <li><a href="report-naf.html">NAF Report</a></li>
+                            <li><a href="report-tax.html">Tax Report</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="account-setting.html"><i class="wesupply-account"></i>Account Setting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="table-main">
+                <h4 class="box-title">Account Statement</h4>
+                <div class="report-invoice-row">
+                    <div class="report-invoice-box">
+                        <div class="report-invoice-box-top">
+                            <div class="report-invoice-box-top-leftside">
+                                <div class="comn-form-group">
+                                    <label class="comn-form-label">Invoice/Credit</label>
+                                    <input type="text" class="comn-form-control" placeholder="Invoice/Credit">
+                                </div>
+                                <div class="comn-form-switch-row">
+                                    <div class="form-check comn-form-check">
+                                        <input class="form-check-input" type="radio" name="pdfExcel" id="PDF">
+                                        <label class="form-check-label" for="PDF">PDF</label>
+                                    </div>
+                                    <div class="form-check comn-form-check">
+                                        <input class="form-check-input" type="radio" name="pdfExcel" id="Excel">
+                                        <label class="form-check-label" for="Excel">Excel</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="report-invoice-box-top-rightside">
+                                <button class="comn-btn">submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/flatpickr.min.js"></script>
+    <script src="../assets/js/rangePlugin.js"></script>
+    <script src="../assets/js/tom-select.complete.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script src="../assets/js/dropzone.min.js"></script>
+    <script src="../assets/js/tagify.js"></script>
+    <script src="../assets/js/ckeditor.js"></script>
+    <script src="../assets/js/Sortable.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+</body>
+
+</html>
