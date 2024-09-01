@@ -2114,6 +2114,10 @@ button.comn-badge:hover,
     transition: var(--transition);
 }
 
+.sidebar-list>li.afterNone>a:after {
+    display: none;
+}
+
 .sidebar-list>li>a[aria-expanded="true"]:after {
     transform: translateY(-50%) rotate(90deg);
     color: var(--blue-color);
